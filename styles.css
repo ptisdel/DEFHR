@@ -1,8 +1,159 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
 body {
-  margin: 2em;
+    color:white;
+}
+
+section {
+    height:100vh;
+    width:100%;
+    border:2px solid green;
+}
+
+header {
+    position:fixed;
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background:#6f1a0e;
+    display:flex;
+    justify-content: space-around;
+}
+
+#navBarTitle {
+    color:gold;
+    text-transform:uppercase;
+}
+.navItem {
+    color:gold;
+    cursor:pointer;
+}
+
+.navItem.selected {
+    color:white;
+}
+
+
+#introSection {
+    background-color:black;
+    background-image:url(images/intro-background.jpg);
+    background-position:center;
+    background-size: cover;
+}
+
+#introTextWrapper {
+    position:absolute;
+    width:80%;
+    text-align:center;
+    bottom:100px;    
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#introTextWrapper h2 {
+    margin-bottom:30px;
+}
+
+#introSummary {
+    line-height:1.5em;
+    margin-bottom:30px;
+}
+
+#beginButton {
+    text-transform: uppercase;
+    border: 1px solid white;
+    background: rgba(0,0,0,0.3);
+    border-radius: 2px;
+    display: inline-block;
+    padding: 15px 23px;
+    font-size: 24px;
+    cursor:pointer;
+    transition:all 0.1s;
+}
+
+#beginButton:hover {
+    background:white;
+    color:black;
+}
+
+
+
+.quadrant {
+    position: relative;
+    display: table;
+    width: 50%;
+    height: 50%;
+    float: left;
+    border: 1px solid blue;
+    background-color: black;
+    cursor: pointer;
+}
+
+
+.quadrant .title {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    text-transform:uppercase;
+}
+    
+    
+.quadrant:hover .title {    
+  background-color: rgba(255,215,0,0.6);
+}
+
+.modal {
+    display:none;
+    cursor:default;
+    color:black;
+}
+
+.closeModal {
+    position:absolute;
+    top:5px;
+    right:5px;
+}
+
+.quadrant.selected .modal {
+    display:block;
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.3);
+    padding:25px;
+    z-index:1;
+}
+
+.quadrant.selected .modalContent {
+    display:flex;
+    flex-direction:column;
+    background-color:white;
+    height:100%;
+}
+
+.modal iframe {
+    width:100%;
+    height:70%;
+}
+
+.modalText {
+    display:flex;
+    flex-grow: 1;    
+}
+
+.modalButton {
+    white-space: nowrap;
+}
+
+#timeline {
+   
+    background-color:white;
+
 }

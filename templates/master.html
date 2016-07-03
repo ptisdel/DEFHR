@@ -1,0 +1,21 @@
+<header id="NavBar" [ngClass]="{'hidden': currentSection == 0}">
+    
+    <img src=""/>
+    <span id="navBarTitle">Changing Lives</span>
+
+    <span class="navItem" *ngFor="let menuitem of menuItems" 
+          [ngClass]="{'selected': currentSection == menuitem.id}"
+          (click)="selectSection(menuitem)"
+          >{{menuitem.name}}</span>
+  
+     
+</header>
+    
+<main id="Pages">
+
+    <intro-section></intro-section>
+    <case-studies-section></case-studies-section>
+    <timeline-section></timeline-section>
+    <defhr-connector-section></defhr-connector-section>
+    
+</main>
