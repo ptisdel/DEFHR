@@ -40,7 +40,7 @@ header {
 
 #introSection {
     background-color:black;
-    background-image:url(images/intro-background.jpg);
+    background-image:url(resources/images/IntroBkgrnd.mp4);
     background-position:center;
     background-size: cover;
 }
