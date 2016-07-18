@@ -11,7 +11,6 @@ body {
 section {
     height:100vh;
     width:100%;
-    border:2px solid green;
 }
 
 header {
@@ -57,45 +56,55 @@ video#bgvid{
     left: 0;
 }
 #introSection {
-    background-color:black;
     background-position:center;
     background-size: cover;
 }
 
 #introTextWrapper {
     position:absolute;
-    width:80%;
+    width:60%;
     text-align:center;
-    bottom:100px;    
+    bottom:70px;    
     left: 0;
     right: 0;
     margin: auto;
 }
 
 #introTextWrapper h2 {
+    font-family: Adelle Condensed;
+    font-weight: bold;
+    font-size: 7.5em;
     margin-bottom:30px;
+    text-align: left;
+    vertical-align: middle;
 }
 
 #introSummary {
-    line-height:1.5em;
-    margin-bottom:30px;
+    color: #fff;
+    font-family: Proxima Nova;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 2em;
+    margin-bottom: 50px;
+    text-align: left;
 }
 
 #beginButton {
     text-transform: uppercase;
-    border: 1px solid white;
-    background: rgba(0,0,0,0.3);
-    border-radius: 2px;
+    border: 2px solid white;
+    background: rgba(116,31,19,1);
     display: inline-block;
-    padding: 15px 23px;
-    font-size: 24px;
+    padding: 15px 60px;
+    font-family: Proxima Nova;
+    font-weight: 500;
+    font-size: 2em;
     cursor:pointer;
     transition:all 0.1s;
 }
 
 #beginButton:hover {
-    background:white;
-    color:black;
+    background: #fcb116;
+    color:white;
 }
 
 
