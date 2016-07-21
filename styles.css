@@ -34,11 +34,16 @@ video#bgvid{
 }
 
 #navBarTitle {
-    color:gold;
-    text-transform:uppercase;
+    font-family: adelle-condensed;
+    font-weight: bold;
+    font-size: 2em;
+    color:#fff;
 }
 .navItem {
-    color:gold;
+    font-family: proxima-nova;
+    font-size: 1.5em;
+    text-transform:uppercase;
+    color:#fff;
     cursor:pointer;
 }
 
@@ -71,7 +76,7 @@ video#bgvid{
 }
 
 #introTextWrapper h2 {
-    font-family: Adelle Condensed;
+    font-family: adelle-condensed;
     font-weight: bold;
     font-size: 7.5em;
     margin-bottom:30px;
@@ -81,7 +86,7 @@ video#bgvid{
 
 #introSummary {
     color: #fff;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-size: 1.5em;
     font-weight: 400;
     line-height: 2em;
@@ -95,7 +100,7 @@ video#bgvid{
     background: rgba(116,31,19,1);
     display: inline-block;
     padding: 15px 60px;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-weight: 500;
     font-size: 2em;
     cursor:pointer;
@@ -182,4 +187,12 @@ video#bgvid{
    
     background-color:white;
 
+}
+
+.timeline {
+    background-image: url(resources/images/FarmBkgd.jpg);
+    background: cover;
+    background-position: top left;
+    overflow: hidden;
+    overflow-y: scroll;
 }
