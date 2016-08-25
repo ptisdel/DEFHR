@@ -1,5 +1,8 @@
 $(document).ready(function () {
     
+    //on refresh, move back to top page
+     $('html,body').stop().animate({scrollTop: 0},1);
+    
     var CurrPage=1;
     var ModalOpen=false;
     
