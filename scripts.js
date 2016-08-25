@@ -54,7 +54,7 @@ $(document).ready(function () {
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
             if (NewPage!=CurrPage) {
-                $('html,body').stop().animate({scrollTop: $(".page:nth-child("+NewPage+")").offset().top},1200); 
+                $('html,body').stop().animate({scrollTop: (NewPage-1)* $(window).height()},1200); 
                 $("body").addClass('shrinkEffect');
             setTimeout(function() {
                 $("body").removeClass('shrinkEffect');
