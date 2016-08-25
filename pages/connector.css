@@ -1,0 +1,10 @@
+#ConnectorPage {
+    background-image:url(/images/connector-intro.jpg);
+    background-position:center center;
+}
+
+#ConnectorPage h2 {
+    font-family:adelle-condensed;
+    text-align:center;
+    font-size:38px;
+}

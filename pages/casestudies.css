@@ -1,0 +1,118 @@
+
+.casestudy {
+    width:50vw;     
+    height:50vh;    
+    position:absolute; 
+    display:table;
+    background-size:cover;
+    color:white;
+    cursor:pointer;
+}
+
+.casestudy > div {   
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-family: adelle-condensed;
+    font-weight: bold;
+    font-size: 38px;
+    text-transform: uppercase;
+    visibility:hidden;
+}
+
+.casestudy:hover > div {
+    background-color:rgba(255,185,0,0.6);    
+    visibility:visible;
+}
+
+.casestudy:nth-child(1) {
+    left:0;
+    top:0;
+    background-image:url(/images/casestudy-1.jpg);
+}
+
+.casestudy:nth-child(1):hover {
+    background-image:url(/images/casestudy-1-bw.jpg);
+}
+
+.casestudy:nth-child(2) {
+    left:50vw;
+    top:0;
+    background-image:url(/images/casestudy-2.jpg);
+}
+
+.casestudy:nth-child(2):hover {
+    background-image:url(/images/casestudy-2-bw.jpg);
+}
+
+.casestudy:nth-child(3) {
+    left:0;
+    bottom:0;
+    background-image:url(/images/casestudy-3.jpg);
+}
+
+.casestudy:nth-child(3):hover {
+    background-image:url(/images/casestudy-3-bw.jpg);
+}
+
+.casestudy:nth-child(4) {
+    left:50vw;
+    bottom:0;
+    background-image:url(/images/casestudy-4.jpg);
+}
+
+.casestudy:nth-child(4):hover {
+    background-image:url(/images/casestudy-4-bw.jpg);
+}
+
+
+
+
+.modal {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background:rgba(0,0,0,0.4);    
+    transition: 0.2s all;
+}
+
+.modal-content {
+    background: white;
+    max-width: 800px;
+    max-height: 600px;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content iframe {
+    width:100%;
+    height:70%;
+}
+
+.modal-content .video-text {
+    padding:20px;
+    margin-top:0;
+}
+
+.closeModal {
+    background: url(/images/x.png);
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
