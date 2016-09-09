@@ -16,11 +16,10 @@ h1 img {
 }
 
 
+
 #introSummary {
-    line-height: 1.5em;
     text-align: justify;
     margin-bottom: 30px;    
-    font-size: 18px;
 }
 
 video {

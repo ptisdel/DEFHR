@@ -1,6 +1,7 @@
 #ConnectorPage {
     background-image:url(/images/connector-intro.jpg);
     background-position:center center;
+    background-size: cover;
 }
 
 #ConnectorPage h2 {

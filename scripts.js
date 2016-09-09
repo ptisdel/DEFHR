@@ -5,6 +5,8 @@ $(document).ready(function () {
     
     var CurrPage=1;
     var ModalOpen=false;
+    var scrollLock=false;
+    var transitionSpeed=300; //milliseconds
     
     $(document).on("click", "#beginButton", function(event) {
         ChangePage(2); 
@@ -38,7 +40,19 @@ $(document).ready(function () {
     
     $(document).on('mousewheel DOMMouseScroll', function(event) {        
         event.preventDefault(); 
-        if (event.originalEvent.wheelDelta >= 0) ChangePage(CurrPage-1); else ChangePage(CurrPage+1);    
+        var scrollAmount = event.originalEvent.wheelDelta;
+        
+            if (scrollLock==false)
+            {
+                if (event.originalEvent.wheelDelta >= 0) ChangePage(CurrPage-1); 
+                else ChangePage(CurrPage+1); 
+                
+                    //lock until next page ready
+                    scrollLock=true;
+                    setTimeout(function() {
+                        scrollLock=false;
+                    }, transitionSpeed);    
+            }
     });
     
     $(document).on('click', '.closeModal, .modal', function(event) {        
@@ -54,12 +68,16 @@ $(document).ready(function () {
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
             if (NewPage!=CurrPage) {
-                $('html,body').stop().animate({scrollTop: (NewPage-1)* $(window).height()},1200); 
-                $("body").addClass('shrinkEffect');
+                $('html,body').stop().animate({scrollTop: (NewPage-1)* $(window).height()},transitionSpeed); 
+                
+                // SHRINK EFFECT: 
+                /*$("body").addClass('shrinkEffect');
             setTimeout(function() {
                 $("body").removeClass('shrinkEffect');
-            }, 1000);
-            }//prevents animation from stalling if the user keeps scrolling up and they're already heading to the first page
+            }, 1000);*/                
+            }
+            
+            //prevents animation from stalling if the user keeps scrolling up and they're already heading to the first page
             CurrPage=NewPage;
             $("#menu .menu-item").removeClass("selected").eq(CurrPage-2).addClass("selected");
             if (CurrPage==1) {

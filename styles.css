@@ -6,6 +6,10 @@ body {
     background-color:black;
 }
 
+p {    
+    line-height: 1.5em;
+    font-size: 20px;
+}
 
 
 
@@ -30,11 +34,12 @@ body {
     color: white;
     outline: none;
     padding: 12px;
+    padding-left:40px;
     display: flex;
     border: none;
     align-items: center;
     visibility:hidden;
-    transition:all 0.4s ease;
+    transition:all 0.5s ease-out;
     transform:translateY(-200%);
 }
 
@@ -61,13 +66,8 @@ body {
     line-height: 1em;
 }
 
-#menu h2 span {
-    color:#faaf15;
-}
-
 #menu #menu-items {
     display:flex;
-    justify-content:space-between;
     flex-grow: 1;
 }
 
@@ -79,6 +79,10 @@ body {
     padding: 7px 0px;
     transition: all 0.2s;
     border-bottom:2px solid transparent;
+}
+
+#menu .menu-item:hover {
+    border-bottom:2px solid orange;    
 }
 
 #menu .menu-item.selected {
