@@ -30,19 +30,11 @@ video {
 
 
 #beginButton {
-    text-align: center;    
-    padding: 7px 20px;
-    border: 1.5px solid white;
-    border-radius: 0;
-    color: white;
-    cursor: pointer;
-    font-size: 3vh;
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    width: 100px;
-    background-color: #741f13;
 }
+
+
 
 
 

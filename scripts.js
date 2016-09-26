@@ -25,6 +25,10 @@ $(document).ready(function () {
          lastTouchY = currentTouchY;
     });
     
+    $(document).on("click", "h2", function(event) {
+        ChangePage(1); 
+    });
+    
     $(document).on("click", ".modalLink", function(event) {
         $("#"+$(this).attr("id")+"-modal").removeClass("hidden");
         ModalOpen=true;
@@ -95,11 +99,11 @@ $(document).ready(function () {
 
     function StopVideos() {
         
-        $(".video").each(function() {
+       /* $(".video").each(function() {
             var videoURL = $(this).prop('src');
             $(this).prop('src','');
             $(this).prop('src',videoURL);
-        });
+        });*/
         
     }
 
