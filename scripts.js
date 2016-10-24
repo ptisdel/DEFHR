@@ -88,8 +88,7 @@ $(document).ready(function () {
                 $("header").removeClass("show"); 
             } else {
                 $("header").addClass("show");
-            }
-            
+            }       
             
             
            
@@ -106,5 +105,35 @@ $(document).ready(function () {
         });*/
         
     }
+    
+    var scrolling = false;
+    
+    $(document).on('mousedown', "#scroll-knob", function(event) {        
+       scrolling=true;
+    });
+    
+    $(document).on('mousemove', function(event) {        
+       if (scrolling) {
+           
+           var barWidth = parseInt($("#scroll").css("width"),10);
+           
+           var newPos = event.pageX - $("#scroll").offset().left;
+           var newPercent = (newPos/barWidth)*100;
+           console.log(newPos);
+           console.log(newPercent);
+           
+           newPercent = Math.max(newPercent, 0);
+        
+           $("#scroll-knob").css("left",newPercent+"%");
+           $("#timelineIMG").css("transform","translateX(-"+newPercent+"%)");
+
+           
+       }
+    });
+    
+    $(document).on('mouseup', function(event) { 
+        scrolling=false;
+    });
+    
 
 });

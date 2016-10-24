@@ -1,7 +1,4 @@
-#timelineIMG {
-    width: 6121px;
-	height:1080px;
-}
+
 .pageWrapper-timeline {
     margin-top:59px;
     position: relative;
@@ -9,6 +6,34 @@
     height: 100%;
     width: 100%;
     overflow-x: scroll;
+}
+
+#timelineIMG {
+    height:100%;
+    pointer-events:none;
+}
+
+#scroll {
+    height:2px;
+    background:gray;
+    position:absolute;
+    left:20%;
+    right:20%;
+    bottom:100px;
+}
+
+#scroll-knob {
+    height:30px;
+    width:10px;
+    transform:translateY(-50%);
+    background:white;
+    opacity:0.5;
+    position:absolute;
+}
+
+#scroll-knob:hover {
+    opacity:1;
+    
 }
 
 #holder {
