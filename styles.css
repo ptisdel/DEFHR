@@ -9,7 +9,7 @@ body {
 p {    
     line-height: 2em;
     font-size: 24px;
-    text-align: left;
+    text-align: left !important;
 }
 
 
@@ -127,7 +127,7 @@ p {
     left: 0;
     height: auto;
     right: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .pageWrapper {
