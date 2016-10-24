@@ -28,17 +28,12 @@ video {
     z-index:0;
 }
 
-
 #beginButton {
+    width: 150px;
     margin-left: auto;
     margin-right: auto;
 }
 
-
-
-
-
 #beginButton:hover {
-    background:white;
-    color:black;
+    background:#f6b951;
 }

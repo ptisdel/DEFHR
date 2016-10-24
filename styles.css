@@ -85,11 +85,11 @@ p {
 }
 
 #menu .menu-item:hover {
-    border-bottom:2px solid #da8d00;    
+    border-bottom:2px solid #f6b951;    
 }
 
 #menu .menu-item.selected {
-    border-bottom:2px solid orange;
+    border-bottom:2px solid #f6b951;
 }
 
 .hidden {
