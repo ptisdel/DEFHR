@@ -7,5 +7,6 @@
 #ConnectorPage h2 {
     font-family:adelle-condensed;
     text-align:center;
-    font-size:38px;
+    font-size:72px;
+    margin-bottom: 30px !important;
 }
