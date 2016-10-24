@@ -6,7 +6,7 @@ h1 {
     align-items: center;
     display: flex;
     color: #fff;
-    font-size: 84px;
+    font-size: 100px;
     margin-bottom: 30px;
 }
 
@@ -18,8 +18,8 @@ h1 img {
 
 
 #introSummary {
-    text-align: justify;
-    margin-bottom: 30px;    
+    text-align: left;
+    margin-bottom: 50px;    
 }
 
 video {
