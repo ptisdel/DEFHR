@@ -125,7 +125,7 @@ $(document).ready(function () {
            newPercent = Math.max(newPercent, 0);
         
            $("#scroll-knob").css("left",newPercent+"%");
-           $("#timelineIMG").css("transform","translateX(-"+newPercent+"%)");
+           $("#timeline-content").css("transform","translateX(-"+newPercent+"%)");
 
            
        }
