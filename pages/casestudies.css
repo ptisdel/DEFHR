@@ -104,6 +104,7 @@
     flex-direction: column;
     transform:scale(1);
     transition:all 0.2s;
+    padding-bottom:20px;
 }
 
 .modal-content iframe {
@@ -127,13 +128,13 @@
 }
 
 .modal-button {
-    transform: translateY(130%);
+    /* transform: translateY(130%);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     display: inline-block;
-    width: 150px;
+    width: 150px;*/
 }
 
 .modal-button:hover {

@@ -73,6 +73,8 @@ p {
 #menu #menu-items {
     display:flex;
     flex-grow: 1;
+    justify-content:space-between;
+    margin-right:50px;
 }
 
 #menu .menu-item { 
