@@ -1,3 +1,8 @@
+* {
+    
+    box-sizing: border-box;
+}
+
 
 body {
     margin:0;
@@ -9,7 +14,7 @@ body {
 p {    
     line-height: 2em;
     font-size: 24px;
-    text-align: left !important;
+    text-align: left;
 }
 
 
@@ -27,7 +32,7 @@ p {
 
 #menu {
     position: fixed;
-    z-index: 2;
+    z-index: 1000;
     top: 0px;
     left: 0;
     right: 0;
@@ -36,6 +41,7 @@ p {
     outline: none;
     padding: 12px;
     padding-left:40px;
+    height:59px;
     display: flex;
     border: none;
     align-items: center;
@@ -153,4 +159,11 @@ button {
     display: inline-block;
     background-color: #741f13;
     text-transform:uppercase;
+}
+
+@media only screen and (max-width: 1090px) {
+    .menu-item {
+        text-align: center;    
+    }
+    
 }

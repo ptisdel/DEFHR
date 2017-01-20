@@ -2,6 +2,9 @@ $(document).ready(function () {
     
     //on refresh, move back to top page
      $('html,body').stop().animate({scrollTop: 0},1);
+    $("header").removeClass("show"); 
+    
+    
     
     var CurrPage=1;
     var ModalOpen=false;
@@ -65,13 +68,17 @@ $(document).ready(function () {
         ModalOpen=false;
     });
     
-    function ChangePage(newPageNumber) {   
+    $(window).bind('resize', function() {
+      ChangePage(CurrPage, true);
+    });
+    
+    function ChangePage(newPageNumber, overrideSamePageCondition) {   
         
         if (!ModalOpen) {
             var maxPage=$(".page").length;            
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
-            if (NewPage!=CurrPage) {
+            if (NewPage!=CurrPage || overrideSamePageCondition) {
                 $('html,body').stop().animate({scrollTop: (NewPage-1)* $(window).height()},transitionSpeed); 
                 
                 // SHRINK EFFECT: 
@@ -116,23 +123,35 @@ $(document).ready(function () {
        if (scrolling) {
            
            var barWidth = parseInt($("#scroll").css("width"),10);
+           var pageWidth = parseInt($("#timeline-content").css("width"),10)-parseInt($("#timeline-wrapper").css("width"),10);
            
            var newPos = event.pageX - $("#scroll").offset().left;
-           var newPercent = (newPos/barWidth)*100;
-           console.log(newPos);
-           console.log(newPercent);
+           var newPercent = Math.min((newPos/barWidth)*100,100);           
+           var newTimelinePos = newPercent*pageWidth/100;
+           
+           /*
+           console.log("Position: "+newPos);
+           console.log("Percent: " +newPercent);      
+           console.log("TimelinePos: "+newTimelinePos);
+           */
            
            newPercent = Math.max(newPercent, 0);
         
            $("#scroll-knob").css("left",newPercent+"%");
-           $("#timeline-content").css("transform","translateX(-"+newPercent+"%)");
-
+           $("#timeline-content").css("transform","translateX(-"+newTimelinePos+"px)");
+           console.log($("#timeline-content").css("transform"));
            
        }
     });
     
     $(document).on('mouseup', function(event) { 
         scrolling=false;
+    });
+    
+    $(document).on('click', ".dot", function(event) {
+        var popup = $(this).parent(".popup");
+        popup.toggleClass("show");
+        $("#"+popup.attr("data-accompanying-visual")).toggleClass("show");
     });
     
 

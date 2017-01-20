@@ -1,30 +1,28 @@
+ 
 
-.pageWrapper-timeline {
-    margin-top:59px;
-    margin-bottom:140px;
+#timeline-wrapper {
     position: relative;
-    flex-grow: 1;
     height: 100%;
-    width: 100%;
-    overflow-x: scroll;
+    display: block;
+    padding-top: 59px;
+    padding-bottom: 80px;
 }
 
 #timeline-content {
-    display:inline-block;
+    position: relative;
+    height: 100%;
+    display: inline-block;
 }
 
-#timelineIMG {
+#timeline-background {
     height:100%;
-    pointer-events:none;
 }
 
-#scroll-background {
-    z-index: 998;
+#scroll-wrapper {    
     background-color: #741f13;
-    height: 140px;
     width: 100%;
+    height: 80px;
     position: absolute;
-    left: 0;
     bottom: 0;
 }
 
@@ -35,7 +33,7 @@
     position:absolute;
     left:4%;
     right:4%;
-    bottom:100px;
+    bottom: 50%;
     box-shadow:-1px 1px 3px 1px #363636 inset;
     border-radius: 3px;
 }
@@ -48,6 +46,7 @@
     background:white;
     opacity:0.5;
     position:absolute;
+    cursor:pointer;
 }
 
 #scroll-knob:hover {
@@ -55,49 +54,53 @@
     
 }
 
+
 #timeline-intro {
-    z-index: 1;
+    left:1%;
+}
+
+.orange {
+    background-color: rgba(246, 185, 81,0.9) !important;       
+}
+
+.text-column {   
     width: 300px;
-    height: 100%;
-    background-color: #f6b951;
     padding: 40px;
     position: absolute;
-    left: 0;
     top: 0;
-    opacity: 0.9;
-    margin: auto;
-    display: table-cell;
-    vertical-align: middle;
+    bottom:0;
+    background-color:rgba(255,255,255, 0.9);
 }
 
-#holder {
-	margin: 50px auto;
-	width: 50px;
-	height: 50px;
+.text-column p {
+    font-size:14px;
+    line-height:1.5em;
+}
+
+.popup {
 	position: absolute;
-	left: 650px;
-	top: 750px;
 }
 
-#appaloosa {
-    z-index: 7;
-    height: auto;
-    width: auto;
-	position: absolute;
-	left: 1250px;
-	top: 380px;
+.popup p {    
+    line-height: 1.4em;
+    font-size: 14px;
+    background-color:rgba(255,255,255,0.9);
+    color:black;
+    padding:15px;
+    width:250px;
+    position:absolute;
+    top: -15px;
+    transition: all 0.2s;
+    opacity:0;
+    z-index:1;
 }
 
-.appaloosa {
-    z-index: 7;
-    height: 700px;
-    width: auto;
-	position: absolute;
-	left: 12px;
-	top: 60px;
+.popup.show p {
+    opacity:1;
 }
 
-.pulse {
+
+.dot {
 	width: 20px;
 	height: 20px;
 	border: 5px solid #f6b951;
@@ -106,11 +109,13 @@
 	border-radius: 30px;
 	background-color: #741f13;
 	z-index: 10;
-	position: absolute;
-	left: 15px;
-	top: 15px;
+    transform:translate(-50%,-50%);
+    position:relative;
+    cursor:pointer;
 }
-.dot {
+.dot:after {
+    position:absolute;
+    content:"";
 	border: 20px solid #f6b951;
 	background: transparent;
 	-webkit-border-radius: 60px;
@@ -124,12 +129,42 @@
 	-webkit-animation-iteration-count: infinite;
 	-moz-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
-	position: absolute;
-	top: -15px;
-	left: -15px;
 	z-index: 9;
 	opacity: 0;
+    left: -40px;
+    top: -40px;
+    
 }
+
+.visual {
+    position: absolute;
+    transition: all 0.2s;
+    opacity:0;
+}
+
+.visual.show {
+    opacity:1;
+}
+
+/* POPUPS */
+
+#PU-sample {
+    left:15%;
+    top:15%;
+}
+
+
+/* VISUALS */
+
+#sample-horse {
+    width: 7%;
+    left: 20%;
+    bottom: 0;
+}
+
+
+/* ANIMATIONS */
+
 @-moz-keyframes pulse {
  0% {
 	-moz-transform: scale(0);
