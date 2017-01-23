@@ -10,3 +10,49 @@
     font-size:72px;
     margin-bottom: 30px !important;
 }
+
+#results {
+    display: flex;
+    margin-top:100px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.horse {
+    min-width: 200px;
+    height: 150px;
+    color:white;
+    margin-right:15px;
+    margin-bottom:15px;
+    display:flex;
+    flex-direction:column;
+    flex: 1;
+    cursor:pointer;
+    transition:all 0.2s;
+}
+
+.horse:hover {
+    transform:scale(1.05);
+}
+
+.horse h3 {
+    margin: 0;
+    padding: 5px 10px;
+    background: #741f13;
+    color: white;
+}
+
+.horse-info-pane {
+    display: flex;
+    flex-wrap: wrap;
+    background-size:cover;
+    flex: 1;
+}
+
+.horse .horse-info-pane ul {
+    background: rgba(0,0,0,0.5);
+    margin: 0;
+    list-style-type: none;
+    padding: 20px 20px;
+    width:100%;
+}

@@ -149,6 +149,10 @@ $(document).ready(function () {
     });
     
     $(document).on('click', ".dot", function(event) {
+        
+        
+     
+        
         var popup = $(this).parent(".popup");
         popup.toggleClass("show");
         $("#"+popup.attr("data-accompanying-visual")).toggleClass("show");

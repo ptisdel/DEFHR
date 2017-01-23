@@ -5,5 +5,24 @@
         <h2>The DEFHR Connector</h2>
         <p>Whether you're looking for a new companion, a horse to join your family, or an equine competitive partner, there’s a horse at Days End Farm Horse Rescue for you. DEFHR has a variety of horses and works to prepare each one for a successful match in a loving home. </p>
     </div>
+    
+    
+    <div id="results" ng-controller="defhrController as vm">
+    
+        <div class="horse" ng-repeat="horse in vm.horses">
+            <h3>{{horse.name}}</h3>
+            <div class="horse-info-pane" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
+                <ul>
+                    <li>{{horse.breed}}</li>
+                    <li>{{horse.sex}}</li>
+                    <li>{{horse.height}}</li>
+                    <li>{{horse.age}}</li>
+                </ul>    
+            </div>
+        </div>
+    
+    
+    
+    </div>
         
 </div>

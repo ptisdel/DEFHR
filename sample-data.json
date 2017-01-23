@@ -1,0 +1,18 @@
+{
+    "1": {
+        "name": "Joey",
+        "breed": "Palamino",
+        "sex": "Female",
+        "height": "5 hands",
+        "age": "3 months",
+        "image": "http://www.defhr.org/wp-content/uploads/2015/03/Adam-June-web.jpg"
+    },
+    "2": {
+        "name": "Angela",
+        "breed": "Warhorse",
+        "sex": "Male",
+        "height": "18 hands",
+        "age": "9000 years",
+        "image": "http://www.defhr.org/wp-content/uploads/2015/03/Adam-June-web.jpg"
+    }
+}
