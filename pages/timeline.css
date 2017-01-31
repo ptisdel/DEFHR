@@ -80,10 +80,10 @@
 
 .popup p {    
     line-height: 1.4em;
-    font-size: 14px;
-    background-color:rgba(255,255,255,0.9);
-    color:black;
-    padding:15px;
+    font-size: 16px;
+    background-color:rgba(0,0,0,0.8);
+    color:#ffffff;
+    padding:150px 25px 25px 25px;
     width:250px;
     position:absolute;
     top: -15px;
@@ -95,7 +95,6 @@
 .popup.show p {
     opacity:1;
 }
-
 
 .dot {
 	width: 20px;
@@ -110,6 +109,7 @@
     position:relative;
     cursor:pointer;
 }
+
 .dot:after {
     position:absolute;
     content:"";
@@ -146,24 +146,37 @@
 /* POPUPS */
 
 #PU-sample {
-    left:15%;
-    top:15%;
+    left:6%;
+    top:45%;
 }
 
+#zodiac {
+    width: 250px;
+    height: 250px;
+    border: 5px solid #f6b951;
+    border-radius: 125px;
+    background-image: url(/images/zodiac-sling.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -125px;
+    z-index: 2;
+}
 
 /* TEXT COLUMNS */
 
 #timeline-intro {
-    left:1%;
+    left:0%;
 }
 
 
 /* VISUALS */
 
 #sample-horse {
-    width: 7%;
+    width: 10%;
     left: 20%;
-    bottom: 0;
+    bottom: 0px;
 }
 
 
