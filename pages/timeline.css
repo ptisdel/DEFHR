@@ -54,8 +54,6 @@
     
 }
 
-
-
 .orange {
     background-color: rgba(246, 185, 81,0.9) !important;       
 }
@@ -70,8 +68,9 @@
 }
 
 .text-column p {
-    font-size:14px;
-    line-height:1.5em;
+    font-size:20px;
+    line-height:2em;
+    padding-top: 100px;
 }
 
 .popup {
@@ -97,9 +96,9 @@
 }
 
 .dot {
-	width: 20px;
-	height: 20px;
-	border: 5px solid #f6b951;
+	width: 30px;
+	height: 30px;
+	border: 4px solid #f6b951;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
@@ -113,23 +112,23 @@
 .dot:after {
     position:absolute;
     content:"";
-	border: 20px solid #f6b951;
+	border: 10px solid #f6b951;
 	background: transparent;
 	-webkit-border-radius: 60px;
 	-moz-border-radius: 60px;
 	border-radius: 60px;
-	height: 50px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 	-webkit-animation: pulse 3s ease-out;
 	-moz-animation: pulse 3s ease-out;
 	animation: pulse 3s ease-out;
 	-webkit-animation-iteration-count: infinite;
 	-moz-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
-	z-index: 9;
+	z-index: 8;
 	opacity: 0;
-    left: -40px;
-    top: -40px;
+    left: -29px;
+    top: -29px;
     
 }
 
