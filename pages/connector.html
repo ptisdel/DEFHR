@@ -8,8 +8,18 @@
     
     
     <div id="results" ng-controller="defhrController as vm">
+        
+        <div id="filter-dropdowns">
+        
+            <select ng-model="vm.filters.breed">
+                <option selected value="">Breed</option>
+                <option ng-repeat="horse in vm.horses  | unique:'breed'">{{horse.breed}}</option>
+            </select>
+        
+        
+        </div>
     
-        <div class="horse" ng-repeat="horse in vm.horses">
+        <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
             <h3>{{horse.name}}</h3>
             <div class="horse-info-pane" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
                 <ul>
