@@ -88,7 +88,8 @@ p {
     transition:all 0.4s;
     margin-right:30px;
     text-transform:uppercase;
-    padding: 7px 0px;
+    font-size: 18px;
+    padding: 3px 0px;
     transition: all 0.2s;
     border-bottom:2px solid transparent;
 }
@@ -146,6 +147,7 @@ p {
 }
 
 button {
+    width: 200px;
     font-family: proxima-nova, Tahoma, Arial, sans-serif;
     text-align: center;    
     padding: 7px 20px;
@@ -159,6 +161,10 @@ button {
     display: inline-block;
     background-color: #741f13;
     text-transform:uppercase;
+}
+
+button:hover {
+    background:#f6b951;
 }
 
 @media only screen and (max-width: 1090px) {

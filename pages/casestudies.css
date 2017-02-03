@@ -88,7 +88,7 @@
 }
 
 .modal-content {
-    background: white;
+    background: #741f13;
     max-width: 800px;
     max-height: 600px;
     width: 80%;
@@ -122,9 +122,10 @@
 .modal-content .video-text p {
     margin:0;
     padding:20px;
-    padding-right:0;
     display: flex;
-    font-size: 14px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.5em;
 }
 
 .modal-button {
@@ -138,7 +139,7 @@
 }
 
 .modal-button:hover {
-    background-color:#632b0f;
+    background-color:#f6b951;
 }
 
 .closeModal {

@@ -93,6 +93,7 @@
 
 .popup p.top {
     transform:translateX(-50%) translateY(-100%);
+    padding:150px 25px 25px 25px;
 }
 
 .popup p.bottom {
@@ -153,9 +154,9 @@
 	border-radius: 80px;
 	height: 80px;
 	width: 80px;
-	-webkit-animation: pulse 3s ease-out;
-	-moz-animation: pulse 3s ease-out;
-	animation: pulse 3s ease-out;
+	-webkit-animation: pulse 2s ease-out;
+	-moz-animation: pulse 2s ease-out;
+	animation: pulse 2s ease-out;
 	-webkit-animation-iteration-count: infinite;
 	-moz-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
@@ -178,9 +179,9 @@
 
 /* POPUPS */
 
-#PU-sample {
-    left:6%;
-    top:45%;
+#PU-arrival {
+    left:9%;
+    bottom:13%;
 }
 
 #zodiac {
@@ -193,7 +194,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    top: -125px;
     z-index: 2;
 }
 
