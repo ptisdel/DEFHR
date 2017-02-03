@@ -112,6 +112,34 @@
     opacity:1;
 }
 
+.textboxblue p {    
+    line-height: 1.4em;
+    font-size: 16px;
+    background-color:#012d57;
+    color:#ffffff;
+    padding:25px 25px 25px 25px;
+    width:300px;
+    position:absolute;
+    left: 17%;
+    bottom: 10%;
+    transition: all 0.2s;
+    z-index:3;
+}
+
+.textboxpurple p {    
+    line-height: 1.4em;
+    font-size: 16px;
+    background-color:#5d0b35;
+    color:#ffffff;
+    padding:25px 25px 25px 25px;
+    width:300px;
+    position:absolute;
+    left: 65%;
+    bottom: 12%;
+    transition: all 0.2s;
+    z-index:3;
+}
+
 .dot {
 	width: 40px;
 	height: 40px;
@@ -184,6 +212,36 @@
     bottom:13%;
 }
 
+#PU-restore {
+    left:14%;
+    bottom:40%;
+}
+
+#PU-records {
+    left:19%;
+    bottom:37%;
+}
+
+#PU-training {
+    left:35%;
+    bottom:15%;
+}
+
+#PU-progress {
+    left:40%;
+    bottom:37%;
+}
+
+#PU-ready {
+    left:45%;
+    bottom:18%;
+}
+
+#PU-ready {
+    left:45%;
+    bottom:18%;
+}
+
 #zodiac {
     width: 250px;
     height: 250px;
@@ -208,7 +266,7 @@
 
 #sample-horse {
     width: 10%;
-    left: 20%;
+    left: 21%;
     bottom: 0px;
 }
 
