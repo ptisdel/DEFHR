@@ -121,7 +121,7 @@
     width:300px;
     position:absolute;
     left: 17%;
-    bottom: 10%;
+    bottom: 12%;
     transition: all 0.2s;
     z-index:3;
 }
@@ -134,8 +134,8 @@
     padding:25px 25px 25px 25px;
     width:300px;
     position:absolute;
-    left: 65%;
-    bottom: 12%;
+    left: 63.5%;
+    bottom: 14%;
     transition: all 0.2s;
     z-index:3;
 }
@@ -208,38 +208,48 @@
 /* POPUPS */
 
 #PU-arrival {
-    left:9%;
+    left:10%;
     bottom:13%;
 }
 
 #PU-restore {
-    left:14%;
+    left:16%;
     bottom:40%;
 }
 
 #PU-records {
-    left:19%;
+    left:38%;
     bottom:37%;
 }
 
 #PU-training {
-    left:35%;
+    left:45%;
     bottom:15%;
 }
 
 #PU-progress {
-    left:40%;
+    left:52%;
     bottom:37%;
 }
 
 #PU-ready {
-    left:45%;
+    left:72%;
     bottom:18%;
 }
 
-#PU-ready {
-    left:45%;
-    bottom:18%;
+#PU-apply {
+    left:80%;
+    bottom:25%;
+}
+
+#PU-home {
+    left:88%;
+    bottom:40%;
+}
+
+#PU-follow {
+    left:95%;
+    bottom:15%;
 }
 
 #zodiac {
@@ -267,6 +277,12 @@
 #sample-horse {
     width: 10%;
     left: 21%;
+    bottom: 0px;
+}
+
+#barney {
+    width: 10%;
+    left: 57%;
     bottom: 0px;
 }
 
