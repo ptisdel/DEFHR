@@ -120,7 +120,7 @@
     padding:25px 25px 25px 25px;
     width:300px;
     position:absolute;
-    left: 17%;
+    left: 22%;
     bottom: 12%;
     transition: all 0.2s;
     z-index:3;
@@ -134,7 +134,7 @@
     padding:25px 25px 25px 25px;
     width:300px;
     position:absolute;
-    left: 63.5%;
+    left: 61.5%;
     bottom: 14%;
     transition: all 0.2s;
     z-index:3;
@@ -208,22 +208,22 @@
 /* POPUPS */
 
 #PU-arrival {
-    left:10%;
+    left:11%;
     bottom:13%;
 }
 
 #PU-restore {
-    left:16%;
+    left:19%;
     bottom:40%;
 }
 
 #PU-records {
-    left:38%;
+    left:42%;
     bottom:37%;
 }
 
 #PU-training {
-    left:45%;
+    left:50%;
     bottom:15%;
 }
 
@@ -271,13 +271,13 @@
 
 #sample-horse {
     width: 10%;
-    left: 21%;
+    left: 26%;
     bottom: 0px;
 }
 
 #barney {
     width: 10%;
-    left: 57%;
+    left: 55%;
     bottom: 0px;
 }
 

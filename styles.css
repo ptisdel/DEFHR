@@ -39,8 +39,7 @@ p {
     background-color: #741f13;
     color: white;
     outline: none;
-    padding: 12px;
-    padding-left:40px;
+    padding: 12px 40px;
     height:59px;
     display: flex;
     border: none;
@@ -72,15 +71,16 @@ p {
     color:white;    
     display: inline-block;
     margin-left: 120px;
-    margin-right:140px;
+    margin-right:75px;
     line-height: 1em;
 }
 
 #menu #menu-items {
     display:flex;
+    max-width: 900px;
     flex-grow: 1;
     justify-content:space-between;
-    margin-right:50px;
+    margin: 0 auto;
 }
 
 #menu .menu-item { 
