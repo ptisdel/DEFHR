@@ -147,6 +147,8 @@
     position: relative;
     width: 125%;
     margin-left: -12.5%;
+    border: 5px #f6b951 solid;
+    border-radius: 50%;
 }
 
 .popup p.top img {
