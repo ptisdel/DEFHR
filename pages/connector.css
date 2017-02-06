@@ -1,14 +1,25 @@
 #ConnectorPage {
+}
+
+#connector-intro {
     background-image:url(/images/connector-intro.jpg);
     background-position:center center;
     background-size: cover;
+    height:100%;
 }
 
-#ConnectorPage h2 {
+#connector-results {
+    display:none;
+}
+
+#connector-intro h2 {
     font-family:adelle-condensed;
     text-align:center;
     font-size:72px;
     margin-bottom: 30px !important;
+}
+
+#connector-search {   
 }
 
 #results {

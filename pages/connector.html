@@ -1,19 +1,41 @@
     
 <div class="pageWrapper">
     
-    <div class="centerBottomWrapper">
-        <h2>The DEFHR Connector</h2>
-        <p>Whether you're looking for a new companion, a horse to join your family, or an equine competitive partner, there’s a horse at Days End Farm Horse Rescue for you. DEFHR has a variety of horses and works to prepare each one for a successful match in a loving home. </p>
+    <div id="connector-intro">
+    
+        <div class="centerBottomWrapper">
+            <h2>The DEFHR Connector</h2>
+            <p>Whether you're looking for a new companion, a horse to join your family, or an equine competitive partner, there’s a horse at Days End Farm Horse Rescue for you. DEFHR has a variety of horses and works to prepare each one for a successful match in a loving home. </p>
+        </div>
+        
+        
+        <button id="connector-search">Find Your Horse</button>
+
     </div>
     
     
-    <div id="results" ng-controller="defhrController as vm">
+    <div id="connector-results" ng-controller="defhrController as vm">
         
         <div id="filter-dropdowns">
         
             <select ng-model="vm.filters.breed">
                 <option selected value="">Breed</option>
                 <option ng-repeat="horse in vm.horses  | unique:'breed'">{{horse.breed}}</option>
+            </select>
+            
+            <select ng-model="vm.filters.sex">
+                <option selected value="">Sex</option>
+                <option ng-repeat="horse in vm.horses  | unique:'sex'">{{horse.sex}}</option>
+            </select>
+            
+            <select ng-model="vm.filters.height">
+                <option selected value="">Height</option>
+                <option ng-repeat="horse in vm.horses  | unique:'sex'">{{horse.height}}</option>
+            </select>
+            
+            <select ng-model="vm.filters.age">
+                <option selected value="">Age</option>
+                <option ng-repeat="horse in vm.horses  | unique:'age'">{{horse.age}}</option>
             </select>
         
         

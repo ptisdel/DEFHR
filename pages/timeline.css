@@ -93,7 +93,6 @@
 
 .popup p.top {
     transform:translateX(-50%) translateY(-100%);
-    padding:150px 25px 25px 25px;
 }
 
 .popup p.bottom {
@@ -110,6 +109,22 @@
 
 .popup.show p {
     opacity:1;
+}
+
+.popup p img {
+    position: relative;
+    width: 125%;
+    margin-left: -12.5%;
+}
+
+.popup p.top img {
+    margin-bottom: 10px;
+    margin-top: -73%;
+}
+
+.popup p.bottom img {    
+    margin-top: 10px;
+    margin-bottom: -73%;
 }
 
 .textboxblue p {    
@@ -172,7 +187,7 @@
     transform:rotate(45deg);
 }
 
-.dot:after {
+.popup:after {
     position:absolute;
     content:"";
 	border: 10px solid #f6b951;
@@ -188,10 +203,10 @@
 	-webkit-animation-iteration-count: infinite;
 	-moz-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
-	z-index: 8;
-	opacity: 0;
-    left: -34px;
-    top: -34px;
+    z-index: 0;
+    opacity: 0;
+    left: -50px;
+    top: -50px;
     
 }
 
