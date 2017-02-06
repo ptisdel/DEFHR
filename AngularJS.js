@@ -10,6 +10,9 @@ app.controller('defhrController',function ($scope) {
     vm.horses={};
     vm.filters = {};
     vm.filters.breed="";
+    vm.filters.sex="";
+    vm.filters.height="";
+    vm.filters.age="";
     
     
     Papa.parse("http://defhr.org/horse-data-wrapper.php", {
@@ -92,8 +95,11 @@ app.filter('FilterHorses', function() {
     var filteredItems=[];  
       
     angular.forEach(items, function(item) {
-      
-      if (filters.breed=="" || filters.breed==item.breed) filteredItems.push(item);
+      console.log(filters.sex);
+      if (
+          (filters.breed=="" || filters.breed==item.breed) && (filters.sex=="" || filters.sex==item.sex) && (filters.height=="" || filters.height==item.height) && (filters.age=="" || filters.age==item.age)
+          ) 
+          filteredItems.push(item);
     });
       
     return filteredItems;

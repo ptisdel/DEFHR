@@ -1,20 +1,22 @@
     
 <div class="pageWrapper">
     
-    <div id="connector-intro">
+    <div id="connector-intro-screen">
     
         <div class="centerBottomWrapper">
             <h2>The DEFHR Connector</h2>
             <p>Whether you're looking for a new companion, a horse to join your family, or an equine competitive partner, there’s a horse at Days End Farm Horse Rescue for you. DEFHR has a variety of horses and works to prepare each one for a successful match in a loving home. </p>
+              
+            <button id="connector-search-button">Find Your Horse</button>
+            
         </div>
         
         
-        <button id="connector-search">Find Your Horse</button>
 
     </div>
     
     
-    <div id="connector-results" ng-controller="defhrController as vm">
+    <div id="connector-results-screen" ng-controller="defhrController as vm">
         
         <div id="filter-dropdowns">
         
@@ -40,16 +42,19 @@
         
         
         </div>
+        
+        <div id="connector-results">
     
-        <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
-            <h3>{{horse.name}}</h3>
-            <div class="horse-info-pane" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
-                <ul>
-                    <li>{{horse.breed}}</li>
-                    <li>{{horse.sex}}</li>
-                    <li>{{horse.height}}</li>
-                    <li>{{horse.age}}</li>
-                </ul>    
+            <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
+                <h3>{{horse.name}}</h3>
+                <div class="horse-info-pane" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
+                    <ul>
+                        <li>{{horse.breed}}</li>
+                        <li>{{horse.sex}}</li>
+                        <li>{{horse.height}}</li>
+                        <li>{{horse.age}}</li>
+                    </ul>    
+                </div>
             </div>
         </div>
     

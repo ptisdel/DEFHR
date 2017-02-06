@@ -1,28 +1,33 @@
 #ConnectorPage {
 }
 
-#connector-intro {
+#connector-intro-screen {
     background-image:url(/images/connector-intro.jpg);
     background-position:center center;
     background-size: cover;
     height:100%;
 }
 
-#connector-results {
+#connector-results-screen {
+    background-image:url(/images/connector-intro-dark.jpg);
+    background-position:center center;
+    background-size: cover;
     display:none;
+    height: 100%;
 }
 
-#connector-intro h2 {
+#connector-intro-screen h2 {
     font-family:adelle-condensed;
     text-align:center;
     font-size:72px;
-    margin-bottom: 30px !important;
+    margin-bottom: 30px !important;    
+    text-shadow: 5px 5px 5px black;
 }
 
 #connector-search {   
 }
 
-#results {
+#connector-results {
     display: flex;
     margin-top:100px;
     padding: 50px;

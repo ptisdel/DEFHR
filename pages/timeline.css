@@ -26,7 +26,7 @@
     bottom: 0;
 }
 
-#scroll {
+/* OLD #scroll {
     z-index: 999;
     height:6px;
     background:#5a5a5a;
@@ -51,6 +51,38 @@
 
 #scroll-knob:hover {
     opacity:1;
+    
+}*/
+#scroll {
+    z-index: 999;
+    height:6px;
+    background:#d7dcdf;
+    position:absolute;
+    left:4%;
+    right:4%;
+    bottom: 36px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+#scroll-knob {
+    z-index: 1000;
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    transform-origin:center;
+    background: #DDA651;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+    transform:translate(-50%,-39%);
+    position:absolute;
+    
+}
+
+#scroll-knob:hover {
+    background: #F5B85A;
     
 }
 

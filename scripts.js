@@ -1,7 +1,13 @@
 $(document).ready(function () {
     
     //on refresh, move back to top page
-     $('html,body').stop().animate({scrollTop: 0},1);
+    $(this).scrollTop(0);
+    $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
+    });
+    
+    
+    
     $("header").removeClass("show"); 
     
     
@@ -14,6 +20,13 @@ $(document).ready(function () {
     $(document).on("click", "#beginButton", function(event) {
         ChangePage(2); 
     });
+    
+    $(document).on("click", "#connector-search-button", function(event) {
+        $("#connector-intro-screen").hide();        
+        $("#connector-results-screen").show();
+    });
+    
+    
     
     var lastTouchY;
     $('document').on('touchmove',function(e){
