@@ -5,15 +5,13 @@ $(document).ready(function () {
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
-    
-    
-    
+    $("#connector-results-screen").removeClass("visible");
     $("header").removeClass("show"); 
     
     
     
     var CurrPage=1;
-    var ModalOpen=false;
+    var CurrModal=0;
     var scrollLock=false;
     var transitionSpeed=300; //milliseconds
     
@@ -22,8 +20,8 @@ $(document).ready(function () {
     });
     
     $(document).on("click", "#connector-search-button", function(event) {
-        $("#connector-intro-screen").hide();        
-        $("#connector-results-screen").show();
+        //$("#connector-intro-screen").hide();        
+        $("#connector-results-screen").addClass('visible');
     });
     
     
@@ -46,19 +44,42 @@ $(document).ready(function () {
     });
     
     $(document).on("click", ".modalLink", function(event) {
-        $("#"+$(this).attr("id")+"-modal").removeClass("hidden");
-        ModalOpen=true;
+        $("#modals").removeClass("hidden");
+        CurrModal=$(this).index()+1;
+        ChangeModal(CurrModal);
+        $(".page-down-arrow").hide();
+    });
+    
+    
+    $(document).on("click", ".modal-left-arrow", function(event) {
+        CurrModal-=1;
+        ChangeModal(CurrModal);
+    });
+    $(document).on("click", ".modal-right-arrow", function(event) {
+        CurrModal+=1;
+        ChangeModal(CurrModal);
     });
     
     $(document).on("click", "#menu .menu-item", function(event) {
         ChangePage($(this).index()+2); 
     });
     
+    $(document).on("click", ".page-down-arrow", function(event) {
+        ChangePage(CurrPage+1); 
+    });
+    
     $(document).on("click", ".modal-content", function(event) {
         event.stopPropagation();
     });
     
-    $(document).on('mousewheel DOMMouseScroll', function(event) {        
+    $(document).on('mousewheel DOMMouseScroll', function(event) {   
+        
+        if ($('#connector-results:hover').length != 0) {
+            
+            
+            return;
+        }
+        
         event.preventDefault(); 
         var scrollAmount = event.originalEvent.wheelDelta;
         
@@ -76,9 +97,17 @@ $(document).ready(function () {
     });
     
     $(document).on('click', '.closeModal, .modal', function(event) {        
-        $(".modal").addClass("hidden");
+        $("#modals").addClass("hidden");
+        $(".page-down-arrow").show();
         StopVideos();
-        ModalOpen=false;
+        CurrModal=0;
+    });
+    
+    $(document).on('click', '.closeModal, .modal', function(event) {  
+        $("#modals").addClass("hidden");
+        $(".page-down-arrow").show();
+        StopVideos();
+        CurrModal=0;
     });
     
     $(window).bind('resize', function() {
@@ -87,7 +116,7 @@ $(document).ready(function () {
     
     function ChangePage(newPageNumber, overrideSamePageCondition) {   
         
-        if (!ModalOpen) {
+        if (!CurrModal) {
             var maxPage=$(".page").length;            
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
@@ -115,15 +144,16 @@ $(document).ready(function () {
             
         }
     }
+    
+    function ChangeModal(index) {
+        
+        var translateAmount=((index-1)*25);  $("#modals").css("transform","translateX(-"+translateAmount+"%)");
+    }
 
     function StopVideos() {
-        
-       /* $(".video").each(function() {
-            var videoURL = $(this).prop('src');
-            $(this).prop('src','');
-            $(this).prop('src',videoURL);
-        });*/
-        
+       $(".modal video").each(function(){
+            this.pause();
+        });        
     }
     
     var scrolling = false;

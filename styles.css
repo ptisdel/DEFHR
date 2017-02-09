@@ -125,6 +125,26 @@ p {
     overflow:hidden;
 }
 
+.page-down-arrow {
+    display:inline-block;
+    width:133px;
+    height:45px;
+    background-image:url(images/arrow.png);
+    position:absolute;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    cursor:pointer;
+}
+
+.page-down-arrow:hover {
+    background-image:url(images/arrow-hover.png);
+}
+
+#RoadToAdoption .page-down-arrow {  
+    bottom: 90px;
+}
+
 .centerBottomWrapper {    
     position: absolute;
     top: auto;

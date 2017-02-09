@@ -14,9 +14,18 @@
     background-image:url(/images/connector-intro-dark.jpg);
     background-position:center center;
     background-size: cover;
-    display:none;
+    display: flex;
     height: 100%;
     overflow: hidden;
+    flex-direction: column;
+    transform:translateX(100%);
+    transition:transform 0.3s ease-in;
+    position: absolute;
+    top: 0;
+}
+
+#connector-results-screen.visible {
+    transform:translateX(0%);
 }
 
 #connector-intro-screen h2 {
@@ -50,6 +59,15 @@
     font-weight: bold;
 }
 
+#filter-dropdowns select option {
+    border: 0;
+    outline: 0;
+    background: #61180e;
+    color: white;
+    padding: 10px;
+    font-family:proxima-nova, Tahoma, Arial, sans-serif;
+}
+
 #connector-results {
     display:flex;
     margin-top:20px;
@@ -67,8 +85,14 @@
     flex-wrap: wrap;
     overflow-y: auto; 
     width:100%;
-    justify-content: center;
-    padding-top:20px;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#horses:after {
+    content: "";
+    flex: auto;
 }
 
 .horse {

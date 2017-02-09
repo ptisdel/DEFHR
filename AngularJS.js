@@ -18,10 +18,21 @@ app.controller('defhrController',function ($scope) {
     Papa.parse("http://defhr.org/horse-data-wrapper.php", {
 	download: true,
 	header: true,
+    skipEmptyLines: true,
 	complete: function(results) {
 		vm.horses=results.data;
+        
+        angular.forEach(vm.horses, function(value, key) {
+            
+            if (value.image!=null){    
+                value.image=(value.image).toString().substring(0, (value.image).toString().length - 4)+"-300x250.jpg";
+            }
+        });
+
+        console.log(vm.horses);
+        
         $scope.$apply(); 
-        // console.log(vm.horses);
+        
 	}
     });
    
