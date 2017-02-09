@@ -22,7 +22,7 @@ h1 img {
     margin-bottom: 50px;    
 }
 
-video {
+video.introvideo {
     object-fit:cover;
     position:absolute;
     z-index:0;

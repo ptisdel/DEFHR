@@ -83,22 +83,22 @@
     right:0;
     top:0;
     bottom:0;
-    background:rgba(0,0,0,0.6);    
+    background:rgba(0,0,0,0.8);    
     transition: 0.2s all;
 }
 
 .modal-content {
     background: #741f13;
     max-width: 800px;
-    max-height: 600px;
-    width: 80%;
+    max-height: 650px;
     height: 80%;
-    margin: auto;
+    width: 80%;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
+    margin: auto;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -110,6 +110,13 @@
 .modal-content iframe {
     width:100%;
     height:70%;
+    background-color:black;
+}
+
+.modal-content video {
+    width:100%;
+    height:auto;
+    display: block;
     background-color:black;
 }
 
