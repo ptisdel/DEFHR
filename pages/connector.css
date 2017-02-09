@@ -1,4 +1,6 @@
-#ConnectorPage {
+#connector-intro-screen button {
+    width:250px;
+    margin-bottom: 30px;
 }
 
 #connector-intro-screen {
@@ -14,37 +16,73 @@
     background-size: cover;
     display:none;
     height: 100%;
+    overflow: hidden;
 }
 
 #connector-intro-screen h2 {
     font-family:adelle-condensed;
     text-align:center;
     font-size:72px;
-    margin-bottom: 30px !important;    
-    text-shadow: 5px 5px 5px black;
+    margin-bottom: 30px !important;  
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.4);
 }
 
 #connector-search {   
 }
 
+#filter-wrapper {
+    padding-top:30px;
+    color:white;
+    text-align: center;
+}
+
+#filter-dropdowns {
+    
+    margin-top: 10px;
+}
+
+#filter-dropdowns select {
+    border: 0;
+    outline: 0;
+    background: #741f13;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
 #connector-results {
-    display: flex;
-    margin-top:100px;
+    display:flex;
+    margin-top:20px;
+    justify-content:center;
+    overflow-y: auto;
+    max-height: 80%;
+    background-color: rgba(0,0,0,0.3);
     padding: 50px;
+    padding-bottom: 40px;
+    padding-top:20px;
+}
+
+#horses {
+    display: flex;
     flex-wrap: wrap;
+    overflow-y: auto; 
+    width:100%;
+    justify-content: center;
+    padding-top:20px;
 }
 
 .horse {
-    min-width: 200px;
-    height: 150px;
+    width: 200px;
     color:white;
-    margin-right:15px;
-    margin-bottom:15px;
+    margin-right:35px;
+    margin-bottom:35px;
     display:flex;
     flex-direction:column;
-    flex: 1;
+    flex-shrink: 0;
     cursor:pointer;
-    transition:all 0.2s;
+    transition:all 0.2s;    
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .horse:hover {
@@ -57,18 +95,58 @@
     background: #741f13;
     color: white;
 }
-
-.horse-info-pane {
-    display: flex;
-    flex-wrap: wrap;
+.horse-image {
     background-size:cover;
+    height:150px;    
+}
+
+.horse-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #741f13;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.horse-info .name {
+    color:white;
+    text-align:center;
+    display:block;
+    margin-bottom: 8px;
+    font-weight: bold;
+
+}
+
+.horse-info .breed {
+    color:white;
+    opacity:0.8;
+    text-align:center;
+    display:block;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.horse .horse-info ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.horse-info li {
+    border-right: 1px solid white;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    font-size: 14px;
+    opacity: 1;
     flex: 1;
 }
 
-.horse .horse-info-pane ul {
-    background: rgba(0,0,0,0.5);
-    margin: 0;
-    list-style-type: none;
-    padding: 20px 20px;
-    width:100%;
+
+.horse-info li:last-child {
+ border-right:0;   
 }

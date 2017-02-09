@@ -92,12 +92,13 @@ app.filter('FilterHorses', function() {
 
   return function(items,filters) {
     
+      
     var filteredItems=[];  
       
     angular.forEach(items, function(item) {
-      console.log(filters.sex);
+
       if (
-          (filters.breed=="" || filters.breed==item.breed) && (filters.sex=="" || filters.sex==item.sex) && (filters.height=="" || filters.height==item.height) && (filters.age=="" || filters.age==item.age)
+          (filters.breed=="" || filters.breed==null || filters.breed==item.breed) && (filters.sex=="" || filters.sex==null || filters.sex==item.sex) && (filters.height==""  || filters.height==null || filters.height==item.height) && (filters.age=="" || filters.age==null || filters.age==item.age)
           ) 
           filteredItems.push(item);
     });

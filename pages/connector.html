@@ -18,42 +18,52 @@
     
     <div id="connector-results-screen" ng-controller="defhrController as vm">
         
+        <div id="filter-wrapper">
+            
+            <span>Select your filters:</span>
+        
         <div id="filter-dropdowns">
         
-            <select ng-model="vm.filters.breed">
-                <option selected value="">Breed</option>
-                <option ng-repeat="horse in vm.horses  | unique:'breed'">{{horse.breed}}</option>
+            <select ng-model="vm.filters.breed" ng-options="horse.breed as horse.breed for horse in vm.horses | unique:'breed'">
+                <option value="">Breed</option>
             </select>
             
-            <select ng-model="vm.filters.sex">
-                <option selected value="">Sex</option>
-                <option ng-repeat="horse in vm.horses  | unique:'sex'">{{horse.sex}}</option>
+            <select ng-model="vm.filters.sex" ng-options="horse.sex as  horse.sex for horse in vm.horses | unique:'sex'">
+                <option value="">Sex</option>
             </select>
             
-            <select ng-model="vm.filters.height">
-                <option selected value="">Height</option>
-                <option ng-repeat="horse in vm.horses  | unique:'sex'">{{horse.height}}</option>
+            <select ng-model="vm.filters.height" ng-options="horse.height as horse.height for horse in vm.horses | unique:'height'">
+                <option value="">Height</option>
             </select>
             
-            <select ng-model="vm.filters.age">
-                <option selected value="">Age</option>
-                <option ng-repeat="horse in vm.horses  | unique:'age'">{{horse.age}}</option>
+            <select ng-model="vm.filters.age" ng-options="horse.age as horse.age for horse in vm.horses | unique:'age'">
+                <option value="">Age</option>
             </select>
+              
         
         
         </div>
+            
+            </div>
         
         <div id="connector-results">
+            
+            <div id="horses">
     
-            <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
-                <h3>{{horse.name}}</h3>
-                <div class="horse-info-pane" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
-                    <ul>
-                        <li>{{horse.breed}}</li>
-                        <li>{{horse.sex}}</li>
-                        <li>{{horse.height}}</li>
-                        <li>{{horse.age}}</li>
-                    </ul>    
+                <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
+                    <div class="horse-image" style="background-image:url(http://www.defhr.org/wp-content/uploads/{{horse.image}})">
+
+                    </div>
+                    <div class="horse-info">
+                        <span class="center name">{{horse.name}}</span>
+                        <span class="center breed">{{horse.breed}}</span>
+                        <ul>
+                            <li>{{horse.sex}}</li>
+                            <li>{{horse.height}}</li>
+                            <li>{{horse.age}}</li>
+                        </ul>    
+
+                    </div>
                 </div>
             </div>
         </div>
