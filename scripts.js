@@ -54,10 +54,12 @@ $(document).ready(function () {
     $(document).on("click", ".modal-left-arrow", function(event) {
         CurrModal-=1;
         ChangeModal(CurrModal);
+        StopVideos();
     });
     $(document).on("click", ".modal-right-arrow", function(event) {
         CurrModal+=1;
         ChangeModal(CurrModal);
+        StopVideos();
     });
     
     $(document).on("click", "#menu .menu-item", function(event) {
@@ -140,6 +142,7 @@ $(document).ready(function () {
             }       
             
             
+            $("#connector-results-screen").removeClass('visible');
            
             
         }

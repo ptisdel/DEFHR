@@ -16,16 +16,17 @@
     background-size: cover;
     display: flex;
     height: 100%;
+    width: 100%;
     overflow: hidden;
     flex-direction: column;
-    transform:translateX(100%);
+    transform:translateY(100%);
     transition:transform 0.3s ease-in;
     position: absolute;
     top: 0;
 }
 
 #connector-results-screen.visible {
-    transform:translateX(0%);
+    transform:translateY(0%);
 }
 
 #connector-intro-screen h2 {
@@ -106,6 +107,10 @@
 
 .horse:hover {
     transform:scale(1.05);
+}
+
+.horse:last-child {
+    margin-right:0;
 }
 
 .horse h3 {
