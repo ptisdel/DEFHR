@@ -13,9 +13,7 @@ $fd = fopen ($filename, "w");
 
 header("Content-Type: application/vnd.ms-excel");
 
-$sql = "
-
-SELECT name, breed, sex, height, age, status, handler_requirement, rider_requirement, image FROM
+$sql = "SELECT name, breed, sex, height, age, status, handler_requirement, rider_requirement, image FROM
 
  (SELECT DISTINCT horses.id as horseID, horses.post_title as name, horseinfo.meta_value as breed
 FROM `wp_gmna_posts` as horses
@@ -89,7 +87,11 @@ WHERE horses.post_type='horse' AND horseinfo.meta_key='_thumbnail_id' AND imagei
 
 ON breed_table.horseID = image_table.horseID;";
 
+mysql_query("SET SQL_BIG_SELECTS = 1;");
+
 $result=mysql_query($sql);
+
+
 
 if(mysql_num_rows($result)>0){
 
@@ -103,5 +105,5 @@ $fileContent="name,breed,sex,height,age,status,handler_requirement,rider_require
 $fileContent=str_replace("\n\n","\n",$fileContent);
     fputs($fd, $fileContent);
     fclose($fd);
-}
-header("content-disposition: attachment;filename=$csv_filename"); ?> 
+ } 
+header("content-disposition: attachment;filename=$filename"); ?> 

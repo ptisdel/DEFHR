@@ -15,7 +15,7 @@ app.controller('defhrController',function ($scope) {
     vm.filters.age="";
     
     
-    Papa.parse("http://defhr.org/horse-data-wrapper.php", {
+    Papa.parse("https://defhr.org/horse-data-wrapper.php", {
 	download: true,
 	header: true,
     skipEmptyLines: true,
