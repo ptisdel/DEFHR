@@ -16,7 +16,7 @@
 
 #connector-results-screen {
     background-image:url(/images/connector-intro-dark.jpg);
-    background-position:center center;
+    background-position:center bottom;
     background-size: cover;
     display: flex;
     height: 100%;
@@ -45,8 +45,6 @@
     text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
 
-#connector-search {   
-}
 
 #filter-wrapper {
     padding-top:30px;
@@ -56,6 +54,8 @@
 
 #filter-dropdowns {
     
+    padding-left: 10px;
+    padding-right: 10px;
     margin-top: 10px;
 }
 
@@ -66,6 +66,7 @@
     color: white;
     padding: 10px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 #filter-dropdowns select option {
@@ -94,7 +95,7 @@
     overflow-y: auto; 
     width:100%;
     justify-content: center;
-    padding-top: 50px;
+    margin-top: 50px;
     padding-bottom: 10px;
 }
 
@@ -180,4 +181,83 @@
 
 .horse-info li:last-child {
  border-right:0;   
+}
+
+
+#connector-flash {
+    background:white;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity:0;
+    pointer-events: none;
+}
+
+
+
+@media screen and (max-width:880px) { 
+ 
+    #connector-intro-screen h2 {
+        font-size: 45px;
+        margin-bottom:0;
+    }
+    
+    #connector-intro-screen p {
+        line-height: 1.4em;
+        font-size: 20px;
+        margin-top:0;
+    }
+    
+}
+
+
+
+@media screen and (max-width:660px) { 
+
+    #ConnectorPage p {
+        
+        line-height: 1.3em;
+        font-size: 16px;
+    }
+    
+    #ConnectorPage h2 {
+        font-size: 36px;
+        line-height: 1.2em;
+    }
+    
+    #connector-results {
+        margin-top:0;
+        padding: 10px;
+        padding-top:0;
+        max-height: 100%; 
+        padding-bottom:0;
+    }
+    
+    .horse {
+        width: 150px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .horse-image {
+        height: 110px;
+    }
+    
+    .horse-info .name {
+        margin-top:0;
+        margin-bottom:0;
+    }
+    
+    
+    .horse-info .breed {
+        margin-top:0;
+        margin-bottom:8px;
+    }
+    
+    .horse-info li {
+        font-size:10px;
+    }
+    
 }

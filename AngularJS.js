@@ -29,7 +29,7 @@ app.controller('defhrController',function ($scope) {
             }
         });
 
-        console.log(vm.horses);
+        //console.log(vm.horses);
         
         $scope.$apply(); 
         
