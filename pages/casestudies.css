@@ -36,41 +36,41 @@
 .casestudy:nth-child(1) {
     left:0;
     top:0;
-    background-image:url(/images/casestudy-1.jpg);
+    background-image:url(./images/casestudy-1.jpg);
 }
 
 .casestudy:nth-child(1):hover {
-    background-image:url(/images/casestudy-1-bw.jpg);
+    background-image:url(./images/casestudy-1-bw.jpg);
 }
 
 .casestudy:nth-child(2) {
     left:50vw;
     top:0;
-    background-image:url(/images/casestudy-2.jpg);
+    background-image:url(./images/casestudy-2.jpg);
 }
 
 .casestudy:nth-child(2):hover {
-    background-image:url(/images/casestudy-2-bw.jpg);
+    background-image:url(./images/casestudy-2-bw.jpg);
 }
 
 .casestudy:nth-child(3) {
     left:0;
     bottom:0;
-    background-image:url(/images/casestudy-3.jpg);
+    background-image:url(./images/casestudy-3.jpg);
 }
 
 .casestudy:nth-child(3):hover {
-    background-image:url(/images/casestudy-3-bw.jpg);
+    background-image:url(./images/casestudy-3-bw.jpg);
 }
 
 .casestudy:nth-child(4) {
     left:50vw;
     bottom:0;
-    background-image:url(/images/casestudy-4.jpg);
+    background-image:url(./images/casestudy-4.jpg);
 }
 
 .casestudy:nth-child(4):hover {
-    background-image:url(/images/casestudy-4-bw.jpg);
+    background-image:url(./images/casestudy-4-bw.jpg);
 }
 
 
@@ -135,12 +135,12 @@
     cursor:pointer;
     height:133px;
     width:45px;
-    background-image:url(../images/left-arrow.png)
+    background-image:url(./images/left-arrow.png)
 }
 
 
 .modal-left-arrow:hover {
-    background-image:url(../images/left-arrow-hover.png)    
+    background-image:url(./images/left-arrow-hover.png)    
 }
 
 .modal-right-arrow {
@@ -151,11 +151,11 @@
     cursor: pointer;
     height: 133px;
     width: 45px;
-    background-image: url(../images/left-arrow.png);
+    background-image: url(./images/left-arrow.png);
 }
 
 .modal-right-arrow:hover {
-    background-image:url(../images/left-arrow-hover.png)    
+    background-image:url(./images/left-arrow-hover.png)    
 }
 
 .modal iframe {
@@ -202,7 +202,7 @@
 }
 
 .closeModal {
-    background: url(/images/x.png);
+    background: url(./images/x.png);
     content: "";
     width: 30px;
     height: 30px;

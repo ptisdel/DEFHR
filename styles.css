@@ -143,7 +143,7 @@ p {
     display:inline-block;
     width:133px;
     height:45px;
-    background-image:url(images/arrow.png);
+    background-image:url(./images/arrow.png);
     position:absolute;
     bottom:15px;
     left:50%;
@@ -152,7 +152,7 @@ p {
 }
 
 .page-down-arrow:hover {
-    background-image:url(images/arrow-hover.png);
+    background-image:url(./images/arrow-hover.png);
 }
 
 #RoadToAdoption .page-down-arrow {  
@@ -258,7 +258,7 @@ button:hover {
     
     
     #menu.mobile-show #menu-button {
-        background-image:url(images/x.png);
+        background-image:url(./images/x.png);
     }
     
     .pageWrapper {
