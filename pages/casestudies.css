@@ -250,6 +250,10 @@
         max-width:100%;
     }
     
+    .modal .video-text p {
+        font-size:24px;
+    }
+    
     .closeModal {
         
         right: 10px;
@@ -257,11 +261,14 @@
         z-index: 1;
     }
     
+    .modal-button {
+        margin-bottom: 80px;
+    }
     
     .modal-left-arrow {left: 20px;
         transform: none;
         top: auto;
-        bottom: 18px;
+        bottom: 98px;
         cursor: pointer;
         height: 50px;
         position: absolute;
@@ -273,7 +280,7 @@
     .modal-right-arrow {
         top: auto;
         right: 20px;
-        bottom: 18px;
+        bottom: 98px;
         cursor: pointer;
         height: 50px;
         width: 22px;
