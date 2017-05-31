@@ -9,7 +9,7 @@
 }
 
 #timeline-content {
-    position: relative;
+    position: absolute;
     height: 100%;
     display: inline-block;
 }
@@ -268,18 +268,7 @@
     bottom:15%;
 }
 
-#zodiac {
-    width: 250px;
-    height: 250px;
-    border: 5px solid #f6b951;
-    border-radius: 125px;
-    background-image: url(./images/zodiac-sling.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 2;
-}
+
 
 /* TEXT COLUMNS */
 
@@ -389,6 +378,7 @@
         width: 100%;
         transform: none;
         margin: 0;   
+        transform:translateZ(0);
         
     }
     
@@ -401,15 +391,16 @@
     
     .popup p img {
         position: relative;
-        width: 118%;
-        border: 0;
-        border-radius: 0;
-        margin-left: -9%;
-        margin-right: -9%;
-        height: 150px;
+        width: calc(100% + 50px);
+        margin-left: -25px;
+        margin-right: -25px;
+        margin-bottom: 25px !important;
         object-fit: cover;
         object-position: 50% 0%;
-        margin-bottom: 20px;
+        height: 300px;
+        display: block;
+        border: 0;
+        border-radius: 0;
         margin-top: 0 !important;
     }
     

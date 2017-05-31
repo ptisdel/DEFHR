@@ -73,6 +73,10 @@
     background-image:url(./../images/casestudy-4-bw.jpg);
 }
 
+.case-right-arrow {
+    display:none;
+}
+
 
 #modals-wrapper.hidden .modal-content {
     transform:scale(0);
@@ -220,7 +224,7 @@
 
 
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:1024px) {
     
     
     .casestudy > div {
@@ -242,6 +246,39 @@
         height: 25%;
         position: initial;
     }
+    
+    .casestudy > div {
+        background-color:rgba(111, 31, 0, 1);
+        border-bottom:1px solid rgba(255,255,255,0.2);
+        position:relative;
+    }
+    
+    .casestudy > div:after {
+        background: url(../images/left-arrow.png);
+        height: 25px;
+        width: 22px;
+        transform: scaleX(-1);
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        content: "";
+        position: absolute;
+        right: 25px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    .casestudy:hover {
+        background-image:none !important;
+        background-color:#c3992a;
+    }
+    
+    .page-down-arrow {
+        width: 45px;
+        height: 15.2px;
+    }
+    
     
     .modal-content {
         width:100%;
@@ -289,5 +326,32 @@
         background-repeat: no-repeat;
     }
     
+    
+}
+
+
+
+@media screen and (max-width:500px) {
+    
+    .modal .video-text p {
+        font-size: 20px;
+    }
+    
+}
+
+
+@media screen and (max-width:400px) {
+   
+    .modal .video-text p {
+        font-size: 18px;
+    }
+    
+    .modal-button {
+        margin-bottom: 20px;
+    }
+    
+    .modal-right-arrow, .modal-left-arrow {
+        bottom:38px;        
+    }
     
 }

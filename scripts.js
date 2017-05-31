@@ -195,8 +195,8 @@ $(document).ready(function () {
            newPercent = Math.max(newPercent, 0);
         
            $("#scroll-knob").css("left",newPercent+"%");
-           $("#timeline-content").css("transform","translateX(-"+newTimelinePos+"px)");
-           console.log($("#timeline-content").css("transform"));
+           $("#timeline-content").css("left","-"+newTimelinePos+"px");
+           console.log($("#timeline-content").css("left"));
            
        }
     });
@@ -205,7 +205,10 @@ $(document).ready(function () {
         scrolling=false;
     });
     
-    $(document).on('click', ".dot", function(event) {        
+    $(document).on('click', ".dot", function(event) {  
+        
+        $(".popup").removeClass("show");
+        
         var popup = $(this).parent(".popup");
         popup.toggleClass("show");
         $("#"+popup.attr("data-accompanying-visual")).toggleClass("show");
