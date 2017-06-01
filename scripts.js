@@ -111,16 +111,11 @@ $(document).ready(function () {
     $(document).on('click', '.closeModal, .modal', function(event) {        
         $("#modals").addClass("hidden");
         $(".page-down-arrow").show();
+        $("#menu-button").removeClass("hiddenOnMobile");
         StopVideos();
         CurrModal=0;
     });
     
-    $(document).on('click', '.closeModal, .modal', function(event) {  
-        $("#modals").addClass("hidden");
-        $(".page-down-arrow").show();
-        StopVideos();
-        CurrModal=0;
-    });
     
     $(window).bind('resize', function() {
       ChangePage(CurrPage, true);
@@ -154,6 +149,7 @@ $(document).ready(function () {
             
             $("#menu").removeClass("mobile-show");
             $("#connector-results-screen").removeClass('visible');
+            $(".popup").removeClass("show");
            
             
         }
@@ -162,6 +158,10 @@ $(document).ready(function () {
     function ChangeModal(index) {
         
         var translateAmount=((index-1)*25);  $("#modals").css("transform","translateX(-"+translateAmount+"%)");
+        
+        $("#menu-button").addClass("hiddenOnMobile");
+        
+        
     }
 
     function StopVideos() {
@@ -205,13 +205,14 @@ $(document).ready(function () {
         scrolling=false;
     });
     
-    $(document).on('click', ".dot", function(event) {  
-        
-        $(".popup").removeClass("show");
+    $(document).on('click', ".dot", function(event) {        
         
         var popup = $(this).parent(".popup");
         popup.toggleClass("show");
-        $("#"+popup.attr("data-accompanying-visual")).toggleClass("show");
+        
+        
+        $(".popup").not(popup).removeClass("show");
+        
     });
     
     

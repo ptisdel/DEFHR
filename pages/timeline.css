@@ -1,11 +1,17 @@
- 
+#RoadToAdoption {
+    
+    padding-top: 56px;
+    padding-bottom: 80px;
+}
 
 #timeline-wrapper {
     position: relative;
     height: 100%;
     display: block;
+/*
     padding-top: 59px;
     padding-bottom: 80px;
+*/
 }
 
 #timeline-content {
@@ -235,12 +241,12 @@
 
 #PU-restore {
     left:19%;
-    bottom:40%;
+    bottom:30%;
 }
 
 #PU-records {
     left:42%;
-    bottom:37%;
+    bottom:33%;
 }
 
 #PU-training {
@@ -260,7 +266,7 @@
 
 #PU-home {
     left:88%;
-    bottom:32%;
+    bottom:28%;
 }
 
 #PU-follow {
@@ -345,9 +351,15 @@
 
 @media screen and (max-width:770px) {
     
+    #RoadToAdoption {
+        padding-top:0;
+    }
+/*
+    
     #timeline-wrapper {
         padding-top:0;
     }
+*/
     
     .text-column {
         width: 200px;
@@ -367,19 +379,20 @@
     .popup p {
         padding-top: 0;
         transition:opacity 0.2s;
-    }
-    
-    .popup.show p {
         position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         width: 100%;
-        transform: none;
         margin: 0;   
         transform:translateZ(0);
+    }
+    
+    .popup.show p {
         
+        transform: none;
+        z-index: 11;
     }
     
     .popup.show .dot {
@@ -387,6 +400,7 @@
         top: 15px;
         right: 15px;
         transform: none;
+        z-index: 12;
     }
     
     .popup p img {
@@ -408,3 +422,15 @@
 
 
 
+@media screen and (max-width:350px) {
+    
+    .text-column p {
+        font-size:18px;
+    }
+    
+    #timeline-intro {
+        align-items: flex-start;
+        padding-top: 50px;
+    }
+    
+}

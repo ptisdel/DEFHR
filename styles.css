@@ -256,6 +256,9 @@ button:hover {
         display:block;
     }
     
+    #menu-button.hiddenOnMobile {
+        display:none !important;
+    }
     
     #menu.mobile-show #menu-button {
         background-image:url(./images/x.png);
