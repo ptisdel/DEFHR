@@ -13,9 +13,9 @@ $fd = fopen ($filename, "w");
 
 header("Content-Type: application/vnd.ms-excel");
 
-    $sql = "SELECT name, breed, sex, height, age, status, handler_requirement, rider_requirement, image FROM
+    $sql = "SELECT name, breed, sex, height, age, status, handler_requirement, rider_requirement, post_name, image FROM
 
-     (SELECT DISTINCT horses.id as horseID, horses.post_title as name, horseinfo.meta_value as breed
+     (SELECT DISTINCT horses.id as horseID, horses.post_title as name, horses.post_name as post_name, horseinfo.meta_value as breed
     FROM `wp_gmna_posts` as horses
     INNER JOIN  `wp_gmna_postmeta` as horseinfo
     ON horses.id=horseinfo.post_id
@@ -95,10 +95,10 @@ $result=mysql_query($sql);
 
 if(mysql_num_rows($result)>0){
 
-$fileContent="name,breed,sex,height,age,status,handler_requirement,rider_requirement,image\n";
+$fileContent="name,breed,sex,height,age,status,handler_requirement,rider_requirement,post_name,image\n";
     while($data=mysql_fetch_array($result))
     {
-    $fileContent.= "".$data['name'].",".$data['breed'].",".$data['sex'].",".$data['height'].",".$data['age'].",".$data['status'].",".$data['handler_requirement'].",".$data['rider_requirement'].",".$data['image']."\n";
+    $fileContent.= "".$data['name'].",".$data['breed'].",".$data['sex'].",".$data['height'].",".$data['age'].",".$data['status'].",".$data['handler_requirement'].",".$data['rider_requirement'].",".$data['post_name'].",".$data['image']."\n";
 }
 
 

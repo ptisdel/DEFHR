@@ -13,6 +13,7 @@ app.controller('defhrController',function ($scope) {
     vm.filters.sex="";
     vm.filters.height="";
     vm.filters.age="";
+    vm.filters.post_name="";
     
     
     Papa.parse("https://defhr.org/horse-data-wrapper.php", {
@@ -25,11 +26,9 @@ app.controller('defhrController',function ($scope) {
         angular.forEach(vm.horses, function(value, key) {
             
             if (value.image!=null){    
-                value.image=value.image;//(value.image).toString().substring(0, (value.image).toString().length - 4)+"-300x250.jpg";
+                value.image=value.image;
             }
         });
-
-        //console.log(vm.horses);
         
         $scope.$apply(); 
         
@@ -91,7 +90,13 @@ app.filter('unique', function() {
         }
 
       });
-      items = newItems;
+        
+        //sort items alphabetically
+        newItems = newItems.sort(function(a, b){
+          return a[filterOn] > b[filterOn];
+        });        
+        
+        items = newItems;
     }
     return items;
   };

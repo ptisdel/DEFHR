@@ -38,7 +38,7 @@
                 <option value="">Height</option>
             </select>
             
-            <select ng-model="vm.filters.age" ng-options="horse.age as horse.age for horse in vm.horses | unique:'age'">
+            <select ng-model="vm.filters.age" ng-options="horse.age as horse.age for horse in vm.horses | unique:'age' ">
                 <option value="">Age</option>
             </select>
               
@@ -52,7 +52,7 @@
             
             <div id="horses">
     
-                <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )">
+                <div class="horse" ng-repeat="horse in filtered = (vm.horses | FilterHorses:vm.filters )" data-post-name="{{horse.post_name}}">
                     <div class="horse-image" style="background-image:url(https://www.defhr.org/wp-content/uploads/{{horse.image}})">
 
                     </div>

@@ -215,6 +215,10 @@ $(document).ready(function () {
         
     });
     
+     $(document).on('click', ".horse", function(event) {  
+        var horse = $(this);
+        window.open("http://www.defhr.org/horse/"+horse.attr("data-post-name")); 
+     });
     
     
 
