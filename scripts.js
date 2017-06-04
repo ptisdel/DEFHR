@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     
     
-    $(window).on( "swipe", function( event ) {
+    $("*").on( "swipe", function( event ) {
         event.preventDefault();
     } );
     
