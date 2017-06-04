@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     
     
-    $("*").on( "swipe", function( event ) {
+    $(window).on( "swipe", function( event ) {
         event.preventDefault();
     } );
     
@@ -141,7 +141,7 @@ $(document).ready(function () {
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
             if (NewPage!=CurrPage || overrideSamePageCondition) {
-                $('html,body').stop().animate({scrollTop: (NewPage-1)* $(window).height()},transitionSpeed); 
+                $('#pages').css("top",-((NewPage-1)*$(window).height())+"px");
                 
                 // SHRINK EFFECT: 
                 /*$("body").addClass('shrinkEffect');
@@ -189,10 +189,12 @@ $(document).ready(function () {
     
     $(document).on('vmousedown', "#scroll-knob", function(event) {   
        scrolling=true;
+       event.preventDefault();
     });
     
     $(document).on('vmousemove', function(event) {        
        if (scrolling) {
+           event.preventDefault();
            
            var barWidth = parseInt($("#scroll").css("width"),10);
            var pageWidth = parseInt($("#timeline-content").css("width"),10)-parseInt($("#timeline-wrapper").css("width"),10);

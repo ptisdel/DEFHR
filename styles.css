@@ -130,10 +130,17 @@ p {
     transform:scale(0.9);
 }
 
+#pages {    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    transition: top 0.3s; /* milliseconds */
+}
 
 .page {
     position:relative;
-    height:100vh;
+    height:100%;
     display:block;
     transition:transform 0.5s ease;
     overflow:hidden;
