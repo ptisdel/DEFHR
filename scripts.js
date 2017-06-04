@@ -3,10 +3,6 @@ $(document).ready(function () {
 
     
     
-    $(window).scroll(function() {
-        SetPageHeight();
-    });
-    
     $(window).on( "swipe", function( event ) {
         event.preventDefault();
     } );
