@@ -142,6 +142,7 @@ $(document).ready(function () {
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
             if (NewPage!=CurrPage || overrideSamePageCondition) {
                 $('#pages').css("top",-((NewPage-1)*$(window).height())+"px");
+                alert("test");
                 
                 // SHRINK EFFECT: 
                 /*$("body").addClass('shrinkEffect');
