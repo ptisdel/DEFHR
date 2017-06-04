@@ -1,15 +1,14 @@
 $(document).ready(function () {
     
-    window.scrollTo(0,1);
 
     
     
-    $( "body" ).scroll(function() {
-      SetPageHeight();
-        alert("test");
+    $(window).scroll(function() {
+        SetPageHeight();
     });
     
     
+    window.scrollTo(0,1);
     
     //on refresh, move back to top page
     $(window).on('beforeunload', function() {
