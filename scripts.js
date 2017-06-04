@@ -1,9 +1,13 @@
 $(document).ready(function () {
     
-    //on refresh, move back to top page
-    
+
     SetPageHeight();
     
+  
+    
+    
+    
+    //on refresh, move back to top page
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
@@ -86,20 +90,26 @@ $(document).ready(function () {
         event.stopPropagation();
     });
     
-    $(document).on('mousewheel DOMMouseScroll', function(event) {   
+    
+    $('body').mousewheel(function(event) {
+    console.log(event.deltaX, event.deltaY, event.deltaFactor);
         
-        if ($('#connector-results:hover').length != 0) {
-            
+        if ($('#connector-results-screen.visible').length != 0) {
+            //don't scroll if horses are open
             
             return;
         }
         
+        
         event.preventDefault(); 
-        var scrollAmount = event.originalEvent.wheelDelta;
+        
+        
+        var scrollAmount = event.deltaFactor;
+        var scrollDirection=event.deltaY;
         
             if (scrollLock==false)
             {
-                if (event.originalEvent.wheelDelta >= 0) ChangePage(CurrPage-1); 
+                if (scrollDirection >= 0) ChangePage(CurrPage-1); 
                 else ChangePage(CurrPage+1); 
                 
                     //lock until next page ready
@@ -109,6 +119,7 @@ $(document).ready(function () {
                     }, transitionSpeed);    
             }
     });
+    
     
     $(document).on('click', '.closeModal, .modal', function(event) {        
         $("#modals").addClass("hidden");
