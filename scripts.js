@@ -7,8 +7,9 @@ $(document).ready(function () {
         SetPageHeight();
     });
     
-    
-    window.scrollTo(0,1);
+    $(window).on( "swipe", function( event ) {
+        event.preventDefault();
+    } );
     
     //on refresh, move back to top page
     $(window).on('beforeunload', function() {
