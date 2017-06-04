@@ -1,7 +1,9 @@
 $(document).ready(function () {
     
     //on refresh, move back to top page
-    $(this).scrollTop(0);
+    
+    SetPageHeight();
+    
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
@@ -118,7 +120,7 @@ $(document).ready(function () {
     
     
     $(window).bind('resize', function() {
-      ChangePage(CurrPage, true);
+        SetPageHeight();
     });
     
     function ChangePage(newPageNumber, overrideSamePageCondition) {   
@@ -170,13 +172,15 @@ $(document).ready(function () {
         });        
     }
     
+    
+    // SCROLLING
     var scrolling = false;
     
-    $(document).on('mousedown', "#scroll-knob", function(event) {        
+    $(document).on('vmousedown', "#scroll-knob", function(event) {   
        scrolling=true;
     });
     
-    $(document).on('mousemove', function(event) {        
+    $(document).on('vmousemove', function(event) {        
        if (scrolling) {
            
            var barWidth = parseInt($("#scroll").css("width"),10);
@@ -186,24 +190,27 @@ $(document).ready(function () {
            var newPercent = Math.min((newPos/barWidth)*100,100);           
            var newTimelinePos = newPercent*pageWidth/100;
            
-           /*
-           console.log("Position: "+newPos);
-           console.log("Percent: " +newPercent);      
-           console.log("TimelinePos: "+newTimelinePos);
-           */
+    
            
            newPercent = Math.max(newPercent, 0);
         
            $("#scroll-knob").css("left",newPercent+"%");
            $("#timeline-content").css("left","-"+newTimelinePos+"px");
-           console.log($("#timeline-content").css("left"));
            
        }
     });
     
-    $(document).on('mouseup', function(event) { 
+    $(document).on('vmouseup', function(event) { 
         scrolling=false;
     });
+    
+    
+    
+    
+    
+    
+    
+    
     
     $(document).on('click', ".dot", function(event) {        
         
@@ -220,6 +227,12 @@ $(document).ready(function () {
         window.open("http://www.defhr.org/horse/"+horse.attr("data-post-name")); 
      });
     
+    
+    function SetPageHeight() {
+      $(".page").css("height",$(window).height()+"px");
+      ChangePage(CurrPage, true);
+      console.log("height changed");        
+    }
     
 
 });
