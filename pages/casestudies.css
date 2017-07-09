@@ -29,48 +29,47 @@
 }
 
 .casestudy:hover > div {
-    background-color:rgba(255,185,0,0.6);    
     visibility:visible;
 }
 
 .casestudy:nth-child(1) {
     left:0;
     top:0;
-    background-image:url(./../images/casestudy-1.jpg);
+    background-image:url(./../images/casestudy-1-bw.jpg);
 }
 
 .casestudy:nth-child(1):hover {
-    background-image:url(./../images/casestudy-1-bw.jpg);
+    background-image:url(./../images/casestudy-1.jpg);
 }
 
 .casestudy:nth-child(2) {
     left:50%;
     top:0;
-    background-image:url(./../images/casestudy-2.jpg);
+    background-image:url(./../images/casestudy-2-bw.jpg);
 }
 
 .casestudy:nth-child(2):hover {
-    background-image:url(./../images/casestudy-2-bw.jpg);
+    background-image:url(./../images/casestudy-2.jpg);
 }
 
 .casestudy:nth-child(3) {
     left:0;
     bottom:0;
-    background-image:url(./../images/casestudy-3.jpg);
+    background-image:url(./../images/casestudy-3-bw.jpg);
 }
 
 .casestudy:nth-child(3):hover {
-    background-image:url(./../images/casestudy-3-bw.jpg);
+    background-image:url(./../images/casestudy-3.jpg);
 }
 
 .casestudy:nth-child(4) {
     left:50%;
     bottom:0;
-    background-image:url(./../images/casestudy-4.jpg);
+    background-image:url(./../images/casestudy-4-bw.jpg);
 }
 
 .casestudy:nth-child(4):hover {
-    background-image:url(./../images/casestudy-4-bw.jpg);
+    background-image:url(./../images/casestudy-4.jpg);
 }
 
 .case-right-arrow {
@@ -90,6 +89,7 @@
     overflow: hidden;
     display:flex;
     transition: all 0.5s;
+    width:400vw;
 }
 
 #modals.hidden .modal {
@@ -104,6 +104,8 @@
     transition: 0.2s all;
     opacity:1;
 }
+
+
 
 #modals.hidden .modal-content {
     opacity:0;
@@ -129,6 +131,11 @@
     transform:scale(1);
     transition:all 0.2s;
     padding-bottom:20px;
+    opacity:0;
+}
+
+.modal.selected .modal-content {
+    opacity:1;
 }
 
 .modal-left-arrow {
@@ -170,16 +177,18 @@
 
 .modal video {
     width:100%;
-    height:auto;
     display: block;
     background-color:black;
     position:relative;
+    flex-shrink: 1;
+    min-height: 1px;
 }
 
 .modal .video-text {
     position:relative;
     flex-grow: 1;
     display:flex;
+    flex-shrink: 0;
 }
 
 .modal .video-text p {
@@ -199,6 +208,7 @@
     right: 0;
     display: inline-block;
     width: 150px;*/
+    flex-shrink: 0;
 }
 
 .modal-button:hover {

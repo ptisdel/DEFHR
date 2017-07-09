@@ -38,6 +38,10 @@ video.introvideo {
     background:#f6b951;
 }
 
+.ui-loader {
+    display:none;
+}
+
 
 @media screen and (max-width:980px) {
     
@@ -92,4 +96,11 @@ video.introvideo {
     }
     
     
+}
+
+@media screen and (max-width: 360px)
+
+#introSummary {
+    font-size: 14px;
+}
 }

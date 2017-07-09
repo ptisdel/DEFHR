@@ -28,6 +28,8 @@ app.controller('defhrController',function ($scope) {
             if (value.image!=null){    
                 value.image=value.image;
             }
+         
+            
         });
         
         $scope.$apply(); 

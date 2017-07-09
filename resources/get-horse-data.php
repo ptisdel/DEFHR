@@ -54,7 +54,7 @@ header("Content-Type: application/vnd.ms-excel");
     FROM `wp_gmna_posts` as horses
     INNER JOIN  `wp_gmna_postmeta` as horseinfo
     ON horses.id=horseinfo.post_id
-    WHERE horses.post_type='horse' AND horseinfo.meta_key='status' AND horseinfo.meta_value='Available for adoption') as status_table
+    WHERE horses.post_type='horse' AND horseinfo.meta_key='status' AND LCASE(horseinfo.meta_value)='available for adoption') as status_table
 
     ON breed_table.horseID = status_table.horseID
     INNER JOIN

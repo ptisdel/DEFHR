@@ -1,13 +1,39 @@
+@keyframes "pulse" {
+ 0% {
+	transform: scale(0);
+	opacity: 0.0;
+ }
+ 25% {
+	transform: scale(0);
+	opacity: 0.1;
+ }
+ 50% {
+	transform: scale(0.1);
+	opacity: 0.2;
+ }
+ 75% {
+	transform: scale(0.5);
+	opacity: 0.4;
+ }
+ 100% {
+	transform: scale(1);
+	opacity: 0.0;
+ }
+}
+
 #RoadToAdoption {
-    
-    padding-top: 56px;
-    padding-bottom: 80px;
+}
+
+#RoadToAdoption > .pageWrapper {
+    margin-top:0;
 }
 
 #timeline-wrapper {
     position: relative;
     height: 100%;
     display: block;
+    overflow-x:scroll;
+    overflow-y:hidden;
 /*
     padding-top: 59px;
     padding-bottom: 80px;
@@ -18,6 +44,7 @@
     position: absolute;
     height: 100%;
     display: inline-block;
+    padding-bottom: 63px;
 }
 
 #timeline-background {
@@ -324,6 +351,7 @@
 	opacity: 0.0;
  }
 }
+
 @-webkit-keyframes "pulse" {
  0% {
 	-webkit-transform: scale(0);
@@ -349,17 +377,37 @@
 
 
 
+@media screen and (max-height:800px) {
+    .popup p {
+        font-size:14px;
+    }
+}
+
+
 @media screen and (max-width:770px) {
     
     #RoadToAdoption {
         padding-top:0;
+        padding-bottom:0;
     }
-/*
+
     
-    #timeline-wrapper {
-        padding-top:0;
+    #scroll-wrapper {
+        display:none;
     }
-*/
+    
+    ::-webkit-scrollbar {
+    height: 0px;
+    }
+    
+    
+    #timeline-content { 
+    padding-bottom:0;
+    }
+    
+    #RoadToAdoption .page-down-arrow {
+        bottom:10px;
+    }
     
     .text-column {
         width: 200px;
@@ -425,12 +473,20 @@
 @media screen and (max-width:350px) {
     
     .text-column p {
-        font-size:18px;
+        font-size:16px;
     }
     
     #timeline-intro {
         align-items: flex-start;
         padding-top: 50px;
     }
+    .textboxblue p {
+        font-size:14px;
+    }
+    
+    .popup.show p {
+     font-size:0.8em;   
+    }
+    
     
 }

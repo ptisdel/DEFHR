@@ -3,9 +3,7 @@ $(document).ready(function () {
 
     
     
-    $(window).on( "swipe", function( event ) {
-        event.preventDefault();
-    } );
+    
     
     //on refresh, move back to top page
     $(window).on('beforeunload', function() {
@@ -42,6 +40,9 @@ $(document).ready(function () {
       $("#connector-flash").animate({opacity: 0}, 200);
         
     });
+    
+    
+    
     
     var lastTouchY;
     $('document').on('touchmove',function(e){
@@ -92,6 +93,9 @@ $(document).ready(function () {
     });
     
     
+    
+    // SCROLLING & SWIPING
+    
     $('body').mousewheel(function(event) {
     console.log(event.deltaX, event.deltaY, event.deltaFactor);
         
@@ -121,6 +125,52 @@ $(document).ready(function () {
             }
     });
     
+      
+   $(window).on('swipedown',function(){
+       
+       if ($('#connector-results-screen.visible').length != 0) {
+            //don't scroll if horses are open
+            return;
+        }
+        
+        event.preventDefault();         
+        
+        ChangePage(CurrPage-1); 
+                
+        //lock until next page ready
+        scrollLock=true;
+        setTimeout(function() {
+            scrollLock=false;
+        }, transitionSpeed);    
+                
+   } );
+    
+   $(window).on('swipeup',function(){
+       
+       if ($('#connector-results-screen.visible').length != 0) {
+            //don't scroll if horses are open
+            return;
+        }
+        
+        event.preventDefault();         
+        
+        ChangePage(CurrPage+1); 
+                
+        //lock until next page ready
+        scrollLock=true;
+        setTimeout(function() {
+            scrollLock=false;
+        }, transitionSpeed);    
+                
+   } );
+    
+   
+    
+    
+    
+    
+    
+    
     
     $(document).on('click', '.closeModal, .modal', function(event) {        
         $("#modals").addClass("hidden");
@@ -133,11 +183,17 @@ $(document).ready(function () {
     
     $(window).bind('resize', function() {
         SetPageHeight();
+      console.log("page resized");     
+    });
+    
+    $(window).bind('orientationchange', function() {
+        console.log("orientation changed");
+        SetPageHeight();
     });
     
     function ChangePage(newPageNumber, overrideSamePageCondition) {   
         
-        if (!CurrModal) {
+        if (!CurrModal || overrideSamePageCondition) {
             var maxPage=$(".page").length;            
             //CurrPage=((maxPage+newPageNumber-1)%(maxPage))+1; //IF WE WANT IT TO LOOPBACK TO INTRO, modulo correction for n-based math
             var NewPage=Math.min(Math.max(1,newPageNumber),maxPage); //IF WE DON'T WANT IT TO LOOP BACK TO INTRO  
@@ -172,6 +228,8 @@ $(document).ready(function () {
     function ChangeModal(index) {
         
         var translateAmount=((index-1)*25);  $("#modals").css("transform","translateX(-"+translateAmount+"%)");
+        $(".modal").removeClass("selected");
+        $(".modal:nth-child("+index+")").addClass("selected");
         
         $("#menu-button").addClass("hiddenOnMobile");
         
@@ -185,7 +243,7 @@ $(document).ready(function () {
     }
     
     
-    // SCROLLING
+    // TIMELINE SCROLLING
     var scrolling = false;
     
     $(document).on('vmousedown', "#scroll-knob", function(event) {   
@@ -202,14 +260,17 @@ $(document).ready(function () {
            
            var newPos = event.pageX - $("#scroll").offset().left;
            var newPercent = Math.min((newPos/barWidth)*100,100);           
-           var newTimelinePos = newPercent*pageWidth/100;
+           var newTimelinePos = Math.max(newPercent*pageWidth/100,0);
            
-    
+           console.log("new pos: "+newPos+"; newPercent: "+newPercent+"; newTimelinePos: "+newTimelinePos+";");
+            
            
            newPercent = Math.max(newPercent, 0);
+           
+           console.log(newPercent);
         
            $("#scroll-knob").css("left",newPercent+"%");
-           $("#timeline-content").css("left","-"+newTimelinePos+"px");
+           $("#timeline-wrapper").scrollLeft(newTimelinePos);
            
        }
     });
@@ -219,6 +280,7 @@ $(document).ready(function () {
     });
     
     
+  
     
     
     
@@ -244,8 +306,7 @@ $(document).ready(function () {
     
     function SetPageHeight() {
       $(".page").css("height",$(window).height()+"px");
-      ChangePage(CurrPage, true);
-      console.log("height changed");        
+      ChangePage(CurrPage, true);   
     }
     
 

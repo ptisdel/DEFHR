@@ -12,6 +12,7 @@ body {
     position:fixed;
     width:100%;
     height:100%;
+    -webkit-overflow-scrolling: auto;
     
 }
 
@@ -191,7 +192,7 @@ p {
     height: 100%;
 }
 
-button {
+button, a.button {
     width: 200px;
     max-width: 100%;
     font-family: proxima-nova, Tahoma, Arial, sans-serif;
@@ -207,6 +208,7 @@ button {
     display: inline-block;
     background-color: #741f13;
     text-transform:uppercase;
+    text-decoration: none;
 }
 
 button:hover {
@@ -285,4 +287,11 @@ button:hover {
         height: 25px;
     }
     
+}
+
+
+@media screen and (max-width:350px) {
+    #menu {
+        width: 270px;
+    }
 }

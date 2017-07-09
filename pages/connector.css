@@ -136,7 +136,9 @@
 .horse-info {
     display: flex;
     flex-direction: column;
-    flex: 1;    
+    flex-basis:auto;
+    flex-grow:0;
+    flex-shrink:0;
     background-image: url(./../images/horse-detail-background.jpg);
     background-size: cover;
     padding: 15px;
@@ -245,6 +247,8 @@
     .horse-image {
         height: 110px;
     }
+    
+    
     
     .horse-info .name {
         margin-top:0;
