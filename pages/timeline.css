@@ -166,32 +166,37 @@
     margin-bottom: -73%;
 }
 
-.textboxblue p {    
-    line-height: 1.4em;
-    font-size: 16px;
-    background-color:#012d57;
-    color:#ffffff;
+.textbox {
     padding:25px 25px 25px 25px;
     width:300px;
     position:absolute;
-    left: 22%;
-    bottom: 12%;
     transition: all 0.2s;
     z-index:3;
 }
 
-.textboxpurple p {    
+.textbox p {    
     line-height: 1.4em;
     font-size: 16px;
-    background-color:#5d0b35;
-    color:#ffffff;
-    padding:25px 25px 25px 25px;
-    width:300px;
-    position:absolute;
+    color:#ffffff;    
+    margin:0;
+}
+
+#progress {
+    left: 22%;
+    bottom: 12%;
+}
+
+#handler {
     left: 61.5%;
-    bottom: 14%;
-    transition: all 0.2s;
-    z-index:3;
+    bottom: 14%;    
+}
+
+.textbox.blue {   
+    background-color:rgba(1,45,87,0.7); 
+}
+
+.textbox.purple {    
+    background-color:rgba(93,11,53,0.7);
 }
 
 .dot {
@@ -480,7 +485,7 @@
         align-items: flex-start;
         padding-top: 50px;
     }
-    .textboxblue p {
+    .textbox p {
         font-size:14px;
     }
     
