@@ -268,7 +268,11 @@
 }
 
 
-@media screen and (max-width:340px) { 
+@media screen and (max-width:360px) { 
+    
+    #ConnectorPage p {
+        font-size: 16px;
+    }
     
     .horse {
         width: 120px;

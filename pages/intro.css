@@ -98,9 +98,16 @@ video.introvideo {
     
 }
 
-@media screen and (max-width: 360px)
+@media screen and (max-width:360px){
+    
+    h1 {        
+        margin-bottom: 0px;
+    }
 
-#introSummary {
-    font-size: 14px;
-}
+    #introSummary {
+        font-size: 14px;
+        line-height:1.2em;
+    }
+
+
 }
