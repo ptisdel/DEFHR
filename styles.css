@@ -4,6 +4,11 @@
 }
 
 
+.wf-loading {
+    /* hide fonts that are loading */
+    visibility: hidden;
+  }
+
 body {
     margin:0;
     overflow: hidden;
