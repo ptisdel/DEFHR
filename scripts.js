@@ -125,15 +125,14 @@ $(document).ready(function () {
             }
     });
     
-      /*
+      
    $(window).on('swipedown',function(){
        
        if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
         }
        else {
-        
-        event.preventDefault();         
+           
         
         ChangePage(CurrPage-1); 
                 
@@ -150,8 +149,7 @@ $(document).ready(function () {
        if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
         }
-        else {
-        event.preventDefault();         
+        else {     
         
         ChangePage(CurrPage+1); 
                 
@@ -166,7 +164,7 @@ $(document).ready(function () {
    
     
     
-    */
+    
     
     
     
