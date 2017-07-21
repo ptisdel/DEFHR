@@ -128,10 +128,10 @@ $(document).ready(function () {
       
    $(window).on('swipedown',function(){
        
-       if ($('#connector-results-screen.visible').length != 0) {
+       if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
-            return;
         }
+       else {
         
         event.preventDefault();         
         
@@ -142,16 +142,15 @@ $(document).ready(function () {
         setTimeout(function() {
             scrollLock=false;
         }, transitionSpeed);    
-                
+       }
    } );
     
    $(window).on('swipeup',function(){
        
-       if ($('#connector-results-screen.visible').length != 0) {
+       if ($('#connector-results-screen.visible').hasClass("visible")) {
             //don't scroll if horses are open
-            return;
         }
-        
+        else {
         event.preventDefault();         
         
         ChangePage(CurrPage+1); 
@@ -161,7 +160,7 @@ $(document).ready(function () {
         setTimeout(function() {
             scrollLock=false;
         }, transitionSpeed);    
-                
+        }
    } );
     
    
