@@ -147,7 +147,7 @@ $(document).ready(function () {
     
    $(window).on('swipeup',function(){
        
-       if ($('#connector-results-screen.visible').hasClass("visible")) {
+       if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
         }
         else {
