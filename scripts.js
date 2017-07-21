@@ -125,7 +125,7 @@ $(document).ready(function () {
             }
     });
     
-      
+      /*
    $(window).on('swipedown',function(){
        
        if ($('#connector-results-screen').hasClass("visible")) {
@@ -166,7 +166,7 @@ $(document).ready(function () {
    
     
     
-    
+    */
     
     
     
