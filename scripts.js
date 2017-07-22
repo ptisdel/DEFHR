@@ -126,7 +126,7 @@ $(document).ready(function () {
     });
     
       
-   $(window).on('swipedown',function(){
+   $(window).on('swipedown',function(e){
        
        if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
@@ -144,7 +144,7 @@ $(document).ready(function () {
        }
    } );
     
-   $(window).on('swipeup',function(){
+   $(window).on('swipeup',function(e){
        
        if ($('#connector-results-screen').hasClass("visible")) {
             //don't scroll if horses are open
