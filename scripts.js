@@ -2,6 +2,47 @@ $(document).ready(function () {
     
 
     
+    var lethargy = new Lethargy();
+    
+    $(window).bind('mousewheel DOMMouseScroll wheel MozMousePixelScroll', function(e){
+        e.preventDefault()
+        e.stopPropagation();
+        if(lethargy.check(e) !== false) {
+            
+            
+            
+           
+            var scrollDirection=lethargy.check(e);
+            
+            console.log(scrollDirection);
+        
+            if ($('#connector-results-screen.visible').length != 0) {
+                //don't scroll if horses are open
+                return;
+            }
+
+
+
+            if (scrollLock==false)
+            {
+                if (scrollDirection >= 0) ChangePage(CurrPage-1); 
+                else ChangePage(CurrPage+1); 
+
+                    //lock until next page ready
+                    scrollLock=true;
+                    setTimeout(function() {
+                        scrollLock=false;
+                    }, transitionSpeed);    
+            }
+
+            
+            
+            
+            
+            
+        }
+    });
+    
     
     
     
@@ -96,7 +137,7 @@ $(document).ready(function () {
     
     // SCROLLING & SWIPING
     
-    $('body').mousewheel(function(event) {
+    /*$('body').mousewheel(function(event) {
     console.log(event.deltaX, event.deltaY, event.deltaFactor);
         
         if ($('#connector-results-screen.visible').length != 0) {
@@ -123,7 +164,7 @@ $(document).ready(function () {
                         scrollLock=false;
                     }, transitionSpeed);    
             }
-    });
+    });*/
     
       
    $(window).on('swipedown',function(e){
