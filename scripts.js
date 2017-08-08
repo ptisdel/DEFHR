@@ -2,49 +2,6 @@ $(document).ready(function () {
     
 
     
-    var lethargy = new Lethargy();
-    
-    $(window).bind('mousewheel DOMMouseScroll wheel MozMousePixelScroll', function(e){
-        e.preventDefault()
-        e.stopPropagation();
-        if(lethargy.check(e) !== false) {
-            
-            
-            
-           
-            var scrollDirection=lethargy.check(e);
-            
-            console.log(scrollDirection);
-        
-            if ($('#connector-results-screen.visible').length != 0) {
-                //don't scroll if horses are open
-                return;
-            }
-
-
-
-            if (scrollLock==false)
-            {
-                if (scrollDirection >= 0) ChangePage(CurrPage-1); 
-                else ChangePage(CurrPage+1); 
-
-                    //lock until next page ready
-                    scrollLock=true;
-                    setTimeout(function() {
-                        scrollLock=false;
-                    }, transitionSpeed);    
-            }
-
-            
-            
-            
-            
-            
-        }
-    });
-    
-    
-    
     
     //on refresh, move back to top page
     $(window).on('beforeunload', function() {
@@ -63,8 +20,6 @@ $(document).ready(function () {
     
     var CurrPage=1;
     var CurrModal=0;
-    var scrollLock=false;
-    var transitionSpeed=300; //milliseconds
     
     $(document).on("click", "#beginButton", function(event) {
         ChangePage(2); 
@@ -136,8 +91,11 @@ $(document).ready(function () {
     
     
     // SCROLLING & SWIPING
+    var scrollTimer;
+    var scrollLock=false;
+    var transitionSpeed=300; //milliseconds
     
-    /*$('body').mousewheel(function(event) {
+    $('body').mousewheel(function(event) {
     console.log(event.deltaX, event.deltaY, event.deltaFactor);
         
         if ($('#connector-results-screen.visible').length != 0) {
@@ -151,20 +109,32 @@ $(document).ready(function () {
         
         
         var scrollAmount = event.deltaFactor;
-        var scrollDirection=event.deltaY;
+        var scrollDirection = event.deltaY;
         
-            if (scrollLock==false)
-            {
-                if (scrollDirection >= 0) ChangePage(CurrPage-1); 
-                else ChangePage(CurrPage+1); 
-                
-                    //lock until next page ready
-                    scrollLock=true;
-                    setTimeout(function() {
-                        scrollLock=false;
-                    }, transitionSpeed);    
-            }
-    });*/
+        // lock on scroll
+        
+        if (scrollLock==false)
+        {
+            if (scrollDirection >= 0) ChangePage(CurrPage-1); 
+            else ChangePage(CurrPage+1); 
+        }
+        
+        
+        
+        if (scrollTimer)
+        {
+            clearTimeout(scrollTimer);
+        }
+        
+        //lock until next page ready
+        scrollLock=true;
+        scrollTimer=setTimeout(function() {
+            scrollLock=false;
+        }, transitionSpeed);    
+        
+        
+        
+    });
     
       
    $(window).on('swipedown',function(e){
@@ -179,9 +149,12 @@ $(document).ready(function () {
                 
         //lock until next page ready
         scrollLock=true;
-        setTimeout(function() {
+        scrollTimer=setTimeout(function() {
             scrollLock=false;
-        }, transitionSpeed);    
+        }, transitionSpeed);   
+           
+           
+           
        }
    } );
     
@@ -196,9 +169,11 @@ $(document).ready(function () {
                 
         //lock until next page ready
         scrollLock=true;
-        setTimeout(function() {
+        scrollTimer=setTimeout(function() {
             scrollLock=false;
-        }, transitionSpeed);    
+        }, transitionSpeed);   
+           
+            
         }
    } );
     
