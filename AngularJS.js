@@ -25,6 +25,37 @@ app.controller('defhrController',function ($scope) {
         
         angular.forEach(vm.horses, function(value, key) {
             
+            if (value.age!=null) {
+                var age = (new Date().getFullYear())-value.age;
+                console.log(age);
+                if (age<3) {
+                    value.age="Young";
+                }
+                else if (age<20) {
+                    value.age="Adult";
+                }
+                else {
+                    value.age="Senior";
+                }
+            }
+            
+            if (value.height!=null) {
+                var height = value.height.substring(0,value.height.length-3);
+                console.log(height);
+                if (height<9.3) {
+                    value.height="Miniature";
+                }
+                else if (height<14.3) {
+                    value.height="Pony";
+                }
+                else {
+                    value.height="Horse";
+                }
+            }
+            
+            
+            
+            
             if (value.image!=null){    
                 value.image=value.image;
             }
