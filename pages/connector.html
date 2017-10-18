@@ -34,13 +34,15 @@
                 <option value="">Sex</option>
             </select>
             
+            <select ng-model="vm.filters.age" ng-options="horse.age as horse.age for horse in vm.horses | unique:'age' ">
+                <option value="">Age</option>
+            </select>
+            
             <select ng-model="vm.filters.height" ng-options="horse.height as horse.height for horse in vm.horses | unique:'height'">
                 <option value="">Height</option>
             </select>
             
-            <select ng-model="vm.filters.age" ng-options="horse.age as horse.age for horse in vm.horses | unique:'age' ">
-                <option value="">Age</option>
-            </select>
+            
               
         
         
