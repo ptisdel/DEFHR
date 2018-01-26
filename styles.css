@@ -126,6 +126,15 @@ p {
     cursor:pointer;
 }
 
+#home-page-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(0,0,0);
+}
+
 .hidden {
     visibility:hidden;
     opacity:0;    
@@ -292,6 +301,15 @@ button:hover {
         height: 25px;
     }
     
+}
+
+
+
+@media screen and (max-width:650px) {
+    
+    #home-page-link {
+        display:none;
+    }
 }
 
 

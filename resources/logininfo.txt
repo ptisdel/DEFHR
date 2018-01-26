@@ -1,4 +1,4 @@
-host: box1154.bluehost.com.
+host: box1154.bluehost.com
 database: defhrorg_wo7180
 user: defhrorg_ICF
 password: timeof26
